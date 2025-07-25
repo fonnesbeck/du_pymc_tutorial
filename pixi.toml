@@ -1,0 +1,18 @@
+[workspace]
+authors = ["Chris Fonnesbeck <fonnesbeck@gmail.com>"]
+channels = ["conda-forge"]
+name = "du_pymc_tutorial"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+polars = ">=1.31.0,<2"
+numba = ">=0.61.2,<0.62"
+pymc = ">=5.25.0,<6"
+nutpie = ">=0.15.2,<0.16"
+plotly = ">=6.2.0,<7"
+preliz = ">=0.20.0,<0.21"
+ipython = ">=9.4.0,<10"
+pydot = ">=4.0.1,<5"
