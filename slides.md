@@ -1,12 +1,13 @@
 ---
-theme: the-unnamed
-background: linear-gradient(135deg, #161C2C 0%, #146b8c 100%)
+theme: neversink
 title: Getting Started with PyMC v5
 info: |
   ## Getting Started with PyMC v5
   Data Umbrella Tutorial
   
   A 1-hour introduction to probabilistic programming and Bayesian modeling with PyMC.
+author: Christopher Fonnesbeck
+organization: PyMC Labs
 class: text-center
 highlighter: shiki
 drawings:
@@ -16,14 +17,13 @@ mdc: true
 fonts:
   sans: Roboto
   mono: Fira Code
+colorSchema: auto
 themeConfig:
-  color: "#F3EFF5"
+  primary: "#146b8c"
+  secondary: "#44FFD2"
+  accent: "#FFE66D"
   background: "#161C2C"
-  accents-teal: "#44FFD2"
-  accents-yellow: "#FFE66D"
-  accents-red: "#FF6B6B"
-  accents-lightblue: "#4EC5D4"
-  accents-blue: "#146b8c"
+  text: "#F3EFF5"
 ---
 
 # Getting Started with PyMC v5
@@ -32,13 +32,13 @@ themeConfig:
   🐍 + 📊 + 🧠 = PyMC
 </div>
 
-<div class="text-2xl text-gray-500">
+<div class="text-2xl">
   Data Umbrella Tutorial
 </div>
 
-<div class="text-xl mt-8 text-gray-400">
+<div class="text-xl mt-8">
   Christopher Fonnesbeck<br>
-  <span class="text-lg text-gray-500">PyMC Labs</span>
+  <span class="text-lg">PyMC Labs</span>
 </div>
 
 <!--
@@ -57,7 +57,7 @@ By the end, you'll have hands-on experience with Bayesian modeling and know how 
 -->
 
 ---
-layout: section
+layout: intro
 ---
 
 # 🎯 What We'll Learn Today
@@ -430,6 +430,10 @@ print(f"Test sample: {pm.draw(x, draws=3)}")
   🎉 If this runs, you're ready!
 </div>
 
+<StickyNote color="green" class="mt-4">
+💡 <strong>Pro Tip:</strong> The first run might be slow due to compilation, but subsequent runs will be much faster!
+</StickyNote>
+
 <!--
 Let's verify your installation works correctly.
 
@@ -520,7 +524,11 @@ layout: center
 
 # 🔧 Troubleshooting Common Issues
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+<Admonition type="warning" title="Most Common Issue">
+The g++ compiler warning on Windows causes 10-100x performance degradation! Install `m2w64-toolchain` to fix this.
+</Admonition>
+
+<div class="grid grid-cols-2 gap-8 mt-4">
   <div class="bg-red-50 p-4 rounded">
     <div class="text-red-700 font-bold mb-2">💥 Import Errors</div>
     <div class="text-sm text-red-600">
@@ -2579,7 +2587,7 @@ Every contribution matters - the community values all forms of participation!
 -->
 
 ---
-layout: center
+layout: credits
 class: text-center
 ---
 
