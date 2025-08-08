@@ -28,18 +28,11 @@ themeConfig:
 
 # Getting Started with PyMC v5
 
-<div class="text-4xl mb-4">
-  🐍 + 📊 + 🧠 = PyMC
-</div>
+by **Christopher Fonnesbeck** • *PyMC Labs*
 
-<div class="text-2xl">
-  Data Umbrella Tutorial
-</div>
+:: note ::
 
-<div class="text-xl mt-8">
-  Christopher Fonnesbeck<br>
-  <span class="text-lg">PyMC Labs</span>
-</div>
+\* Data Umbrella Tutorial
 
 <!--
 Welcome to this comprehensive 1-hour tutorial on PyMC v5!
@@ -57,29 +50,35 @@ By the end, you'll have hands-on experience with Bayesian modeling and know how 
 -->
 
 ---
-layout: intro
+layout: top-title
+color: sky-light
+align: c
 ---
+
+:: title ::
 
 # 🎯 What We'll Learn Today
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+:: content ::
+
+<div class="grid grid-cols-2 gap-8 mt-6">
   <div>
-    <div class="text-4xl mb-4">🧠</div>
+    <div class="text-4xl mb-3">🧠</div>
     <div class="text-xl mb-2">Bayesian Thinking</div>
     <div class="text-sm text-gray-600">Understanding uncertainty and probabilistic models</div>
   </div>
   <div>
-    <div class="text-4xl mb-4">🔧</div>
+    <div class="text-4xl mb-3">🔧</div>
     <div class="text-xl mb-2">Practical Skills</div>
     <div class="text-sm text-gray-600">Building and diagnosing real models</div>
   </div>
   <div>
-    <div class="text-4xl mb-4">📊</div>
+    <div class="text-4xl mb-3">📊</div>
     <div class="text-xl mb-2">Data Analysis</div>
     <div class="text-sm text-gray-600">Working with real-world examples</div>
   </div>
   <div>
-    <div class="text-4xl mb-4">🚀</div>
+    <div class="text-4xl mb-3">🚀</div>
     <div class="text-xl mb-2">Best Practices</div>
     <div class="text-sm text-gray-600">Avoiding common pitfalls</div>
   </div>
@@ -102,17 +101,25 @@ This isn't just about learning PyMC syntax - it's about becoming a better data s
 -->
 
 ---
-layout: center
+layout: top-title
+color: emerald-light
+align: c
 ---
+
+:: title ::
 
 # What is PyMC?
 
-<div class="text-6xl mb-8 mt-16">
-  🐍 + 📊 + 🧠 = PyMC
-</div>
+:: content ::
 
-<div class="text-2xl text-gray-600">
-  Python + Statistics + Probabilistic Thinking
+<div class="text-center">
+  <div class="text-6xl mb-8 mt-8">
+    🐍 + 📊 + 🧠 = PyMC
+  </div>
+
+  <div class="text-2xl text-gray-600">
+    Python + Statistics + Probabilistic Thinking
+  </div>
 </div>
 
 <!--
@@ -134,37 +141,33 @@ Think of it as a way to build models that explicitly handle uncertainty at every
 -->
 
 ---
-layout: center
+layout: two-cols-title
+columns: is-6
+align: c-lt-lt
+color: sky-light
 ---
+
+:: title ::
 
 # Why Bayesian Modeling?
 
-<div class="grid grid-cols-2 gap-12 mt-8">
-  <div>
-    <div class="text-4xl mb-4">📈</div>
-    <div class="text-2xl mb-4">Traditional Approach</div>
-    <div class="text-lg">
-      <ul>
-        <li>Point estimates</li>
-        <li>p-values</li>
-        <li>Confidence intervals*</li>
-        <li>Null hypothesis testing</li>
-      </ul>
-    </div>
-  </div>
-  <div>
-    <div class="text-4xl mb-4">🎯</div>
-    <div class="text-2xl mb-4">Bayesian Approach</div>
-    <div class="text-lg">
-      <ul>
-        <li>Full distributions</li>
-        <li>Probability statements</li>
-        <li>Credible intervals</li>
-        <li>Direct inference</li>
-      </ul>
-    </div>
-  </div>
-</div>
+:: left ::
+
+## 📈 Traditional Approach
+
+- Point estimates
+- p-values
+- Confidence intervals*
+- Null hypothesis testing
+
+:: right ::
+
+## 🎯 Bayesian Approach
+
+- Full distributions
+- Probability statements
+- Credible intervals
+- Direct inference
 
 <!--
 The Bayesian approach is fundamentally more intuitive and informative:
@@ -186,15 +189,21 @@ The Bayesian approach answers the questions you actually want to ask about your 
 -->
 
 ---
-layout: default
+layout: top-title
+color: indigo-light
+align: c
 ---
+
+:: title ::
 
 # Real-World Applications
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+:: content ::
+
+<div class="grid grid-cols-2 gap-8 mt-6">
   <div>
     <div class="text-2xl mb-4 text-blue-400">🏥 Healthcare</div>
-    <ul class="text-sm space-y-2">
+    <ul class="text-base space-y-2">
       <li>Clinical trial design</li>
       <li>Drug dosing optimization</li>
       <li>Epidemiological modeling</li>
@@ -203,7 +212,7 @@ layout: default
   </div>
   <div>
     <div class="text-2xl mb-4 text-green-400">💰 Finance</div>
-    <ul class="text-sm space-y-2">
+    <ul class="text-base space-y-2">
       <li>Risk modeling</li>
       <li>Portfolio optimization</li>
       <li>Credit scoring</li>
@@ -212,7 +221,7 @@ layout: default
   </div>
   <div>
     <div class="text-2xl mb-4 text-purple-400">🧬 Science</div>
-    <ul class="text-sm space-y-2">
+    <ul class="text-base space-y-2">
       <li>Parameter estimation</li>
       <li>Model comparison</li>
       <li>Experimental design</li>
@@ -221,7 +230,7 @@ layout: default
   </div>
   <div>
     <div class="text-2xl mb-4 text-orange-400">📱 Tech</div>
-    <ul class="text-sm space-y-2">
+    <ul class="text-base space-y-2">
       <li>A/B testing</li>
       <li>Recommendation systems</li>
       <li>Anomaly detection</li>
@@ -263,13 +272,12 @@ The common thread: all these applications involve uncertainty that needs to be p
 
 ---
 layout: section
+color: blue-light
 ---
 
 # 📦 Installation & Setup
 
-<div class="text-4xl mt-8">
-  Let's get you up and running!
-</div>
+Let's get you up and running!
 
 <!--
 Before we dive into modeling, let's make sure everyone has PyMC properly installed and configured.
@@ -280,16 +288,21 @@ Don't worry if you run into problems - PyMC has some complex dependencies, and i
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # 🚀 Recommended Installation
 
-<div class="text-4xl mb-8 font-mono">
+:: content ::
+
+<div class="text-4xl mb-6 font-mono">
   conda install -c conda-forge pymc
 </div>
 
-<div class="text-lg text-gray-500 mb-8">
+<div class="text-lg text-gray-500 mb-6">
   (conda-forge is the official recommended method)
 </div>
 
@@ -329,49 +342,54 @@ Never use regular conda channel - always use conda-forge.
 -->
 
 ---
-layout: two-cols
+layout: top-title-two-cols
+color: blue-light
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # Sampling Backends & Libraries
 
-<div class="grid grid-cols-2 gap-4 text-sm">
+:: left ::
 
-<div class="bg-green-100 p-3 rounded">
-  <div class="text-lg font-bold text-green-800 mb-2">🔧 PyTensor (Default)</div>
-  <div class="text-green-700">
+<div class="bg-green-100 p-6 rounded-lg mb-6">
+  <div class="text-xl font-bold text-green-800 mb-2">🔧 PyTensor (Default)</div>
+  <div class="text-green-700 text-sm">
     • CPU-based, most stable<br>
     • Works everywhere<br>
     • All PyMC features supported
   </div>
 </div>
 
-<div class="bg-blue-100 p-3 rounded">
-  <div class="text-lg font-bold text-blue-800 mb-2">⚡ JAX + NumPyro</div>
-  <div class="text-blue-700">
+<div class="bg-blue-100 p-6 rounded-lg">
+  <div class="text-xl font-bold text-blue-800 mb-2">⚡ JAX + NumPyro</div>
+  <div class="text-blue-700 text-sm">
     • GPU/TPU acceleration<br>
     • <code>conda install numpyro</code><br>
     • Some limitations
   </div>
 </div>
 
-<div class="bg-purple-100 p-3 rounded">
-  <div class="text-lg font-bold text-purple-800 mb-2">🚀 Nutpie</div>
-  <div class="text-purple-700">
+:: right ::
+
+<div class="bg-purple-100 p-6 rounded-lg mb-6">
+  <div class="text-xl font-bold text-purple-800 mb-2">🚀 Nutpie</div>
+  <div class="text-purple-700 text-sm">
     • Rust + Numba performance<br>
     • <code>conda install -c conda-forge nutpie</code><br>
     • CPU-optimized NUTS
   </div>
 </div>
 
-<div class="bg-orange-100 p-3 rounded">
-  <div class="text-lg font-bold text-orange-800 mb-2">⚫ BlackJAX</div>
-  <div class="text-orange-700">
+<div class="bg-orange-100 p-6 rounded-lg">
+  <div class="text-xl font-bold text-orange-800 mb-2">⚫ BlackJAX</div>
+  <div class="text-orange-700 text-sm">
     • JAX-based samplers<br>
     • <code>conda install blackjax</code><br>
     • Advanced MCMC methods
   </div>
-</div>
-
 </div>
 
 <!--
@@ -409,10 +427,15 @@ You can explore faster backends later when working with larger, more complex mod
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
 
+:: title ::
+
 # ✅ Test Your Installation
+
+:: content ::
 
 ```python {all|1-2|4-5|7-8}
 import pymc as pm
@@ -426,7 +449,7 @@ x = pm.Normal.dist(mu=0, sigma=1)
 print(f"Test sample: {pm.draw(x, draws=3)}")
 ```
 
-<div v-click class="text-2xl mt-8 text-green-500">
+<div v-click class="text-2xl mt-6 text-green-500">
   🎉 If this runs, you're ready!
 </div>
 
@@ -463,25 +486,30 @@ If sampling is very slow:
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # 🛠️ Development Setup
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+:: content ::
+
+<div class="grid grid-cols-2 gap-8 mt-6">
   <div class="bg-blue-50 p-6 rounded-lg">
-    <div class="text-2xl mb-3">📓 Jupyter Notebooks</div>
-    <div class="text-lg mb-4 text-blue-900">Recommended for learning</div>
-    <div class="text-sm space-y-2 text-blue-800">
+    <div class="text-2xl mb-2">📓 Jupyter Notebooks</div>
+    <div class="text-lg mb-3 text-blue-900">Recommended for learning</div>
+    <div class="text-sm space-y-1.5 text-blue-800">
       <div>✅ Interactive exploration</div>
       <div>✅ Immediate plot display</div>
       <div>✅ Great for tutorials</div>
     </div>
   </div>
   <div class="bg-green-50 p-6 rounded-lg">
-    <div class="text-2xl mb-3">🆚 VS Code + Jupyter</div>
-    <div class="text-lg mb-4 text-green-900">Best of both worlds</div>
-    <div class="text-sm space-y-2 text-green-800">
+    <div class="text-2xl mb-2">🆚 VS Code + Jupyter</div>
+    <div class="text-lg mb-3 text-green-900">Best of both worlds</div>
+    <div class="text-sm space-y-1.5 text-green-800">
       <div>✅ Code completion</div>
       <div>✅ Git integration</div>
       <div>✅ Notebook support</div>
@@ -519,42 +547,48 @@ Pro tip: Start with Jupyter for exploration, then move to VS Code when you want 
 -->
 
 ---
-layout: center
+layout: top-title
+color: orange-light
+align: c
 ---
 
+:: title ::
+
 # 🔧 Troubleshooting Common Issues
+
+:: content ::
 
 <Admonition type="warning" title="Most Common Issue">
 The g++ compiler warning on Windows causes 10-100x performance degradation! Install `m2w64-toolchain` to fix this.
 </Admonition>
 
-<div class="grid grid-cols-2 gap-8 mt-4">
-  <div class="bg-red-50 p-4 rounded">
-    <div class="text-red-700 font-bold mb-2">💥 Import Errors</div>
-    <div class="text-sm text-red-600">
+<div class="grid grid-cols-2 gap-8 mt-6">
+  <div class="bg-red-50 p-6 rounded-lg">
+    <div class="text-red-700 font-bold mb-3 text-lg">💥 Import Errors</div>
+    <div class="text-base text-red-600">
       pip install --upgrade pymc arviz<br>
       conda update -c conda-forge pymc
     </div>
   </div>
-  <div class="bg-yellow-50 p-4 rounded">
-    <div class="text-yellow-700 font-bold mb-2">⚠️ g++ Compiler Warning</div>
-    <div class="text-sm text-yellow-600">
+  <div class="bg-yellow-50 p-6 rounded-lg">
+    <div class="text-yellow-700 font-bold mb-3 text-lg">⚠️ g++ Compiler Warning</div>
+    <div class="text-base text-yellow-600">
       <strong>Windows users:</strong><br>
       conda install m2w64-toolchain<br>
       Fixes severe performance degradation
     </div>
   </div>
-  <div class="bg-blue-50 p-4 rounded">
-    <div class="text-blue-700 font-bold mb-2">🖥️ Platform-Specific</div>
-    <div class="text-sm text-blue-600">
+  <div class="bg-blue-50 p-6 rounded-lg">
+    <div class="text-blue-700 font-bold mb-3 text-lg">🖥️ Platform-Specific</div>
+    <div class="text-base text-blue-600">
       <strong>Mac M1/M2:</strong> Use conda-forge only<br>
       <strong>Linux:</strong> Generally smooth<br>
       <strong>Colab:</strong> May need runtime restart
     </div>
   </div>
-  <div class="bg-green-50 p-4 rounded">
-    <div class="text-green-700 font-bold mb-2">🔍 Need Help?</div>
-    <div class="text-sm text-green-600">
+  <div class="bg-green-50 p-6 rounded-lg">
+    <div class="text-green-700 font-bold mb-3 text-lg">🔍 Need Help?</div>
+    <div class="text-base text-green-600">
       discourse.pymc.io<br>
       Friendly community support!
     </div>
@@ -593,13 +627,12 @@ Getting Help:
 
 ---
 layout: section
+color: emerald-light
 ---
 
 # 🧠 PyMC Fundamentals
 
-<div class="text-4xl mt-8">
-  The building blocks of Bayesian models
-</div>
+The building blocks of Bayesian models
 
 <!--
 Now that we have PyMC installed, let's understand how it works.
@@ -614,20 +647,28 @@ We'll start simple and build up complexity gradually. By the end of this section
 -->
 
 ---
-layout: center
+layout: top-title
+color: amber-light
+align: c
 ---
+
+:: title ::
 
 # The Model Container
 
-<div class="text-6xl mb-8">
-  📦
+:: content ::
+
+<div class="text-center mb-8">
+  <div class="text-6xl mb-8">
+    📦
+  </div>
 </div>
 
 ```python {all|1|2-3|5-6}
 with pm.Model() as model:
     # All random variables go here
     mu = pm.Normal("mu", mu=0, sigma=10)
-    
+
     # PyMC tracks relationships automatically
     x = pm.Normal("x", mu=mu, sigma=1, observed=data)
 ```
@@ -653,12 +694,17 @@ The model context is where the magic happens - PyMC builds a directed acyclic gr
 -->
 
 ---
-layout: default
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Random Variables & Distributions
 
-<div class="mt-8">
+:: content ::
+
+<div class="mt-4">
 
 ```python {all|1-2|4-5|7-8}
 # Unobserved (parameters to estimate)
@@ -698,12 +744,18 @@ The key insight: you're building a generative model. You're saying "this is how 
 -->
 
 ---
-layout: center
+layout: top-title
+color: purple-light
+align: c
 ---
+
+:: title ::
 
 # Distribution Zoo 🦁
 
-<img src="/plots/distributions/distribution_zoo.png" class="w-full max-w-3xl mx-auto mt-4">
+:: content ::
+
+<img src="/plots/distributions/distribution_zoo.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
 PyMC provides a comprehensive set of probability distributions:
@@ -732,12 +784,17 @@ Each distribution has parameters that control its shape and location. Understand
 -->
 
 ---
-layout: two-cols
+layout: top-title-two-cols
+color: light
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # Observed Data
 
-::left::
+:: left ::
 
 ```python {all|1-2|4-5|6-7|8}
 # Your actual data
@@ -746,21 +803,18 @@ data = np.array([1.2, 2.3, 1.8, 2.9, 3.1])
 with pm.Model() as model:
     mu = pm.Normal("mu", mu=0, sigma=10)
     sigma = pm.HalfNormal("sigma", sigma=1)
-    observations = pm.Normal("obs", mu=mu, 
+    observations = pm.Normal("obs", mu=mu,
                            sigma=sigma, observed=data)
 ```
 
-::right::
+:: right ::
 
-<div class="mt-8">
-  <div class="text-2xl mb-4">Key Points</div>
-  <ul class="text-sm space-y-2">
-    <li>🎯 <code>observed=data</code> makes it a likelihood</li>
-    <li>📊 Data shape must match distribution</li>
-    <li>🔗 Links parameters to your actual data</li>
-    <li>⚡ This is where Bayes' theorem happens!</li>
-  </ul>
-</div>
+## Key Points
+
+- 🎯 `observed=data` makes it a likelihood
+- 📊 Data shape must match distribution
+- 🔗 Links parameters to your actual data
+- ⚡ This is where Bayes' theorem happens!
 
 <!--
 The `observed` argument is where your data meets your model:
@@ -787,46 +841,41 @@ This is the heart of Bayesian inference: updating our beliefs about parameters b
 -->
 
 ---
-layout: center
+layout: top-title-two-cols
+color: red-light
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # 📊 Data Handling Pitfalls
 
-<div class="grid grid-cols-2 gap-6 mt-8">
-  <div class="bg-red-50 p-4 rounded">
-    <div class="text-red-700 font-bold mb-2">❌ Pandas Inside Model</div>
-    <div class="text-sm text-red-600">
-      PyMC operates on tensors, not DataFrames!
-    </div>
-  </div>
-  <div class="bg-green-50 p-4 rounded">
-    <div class="text-green-700 font-bold mb-2">✅ Prepare Data First</div>
-    <div class="text-sm text-green-600">
-      Prepare data outside model context
-    </div>
-  </div>
-</div>
+:: left ::
+
+### Common Mistakes
+
+- ❌ Pandas operations inside model context
+  - PyMC operates on tensors, not DataFrames
+- ✅ Prepare data first
+  - Do pandas ops outside the model, then use `.values`
+- 🔁 Updatable data
+  - Use `pm.Data()` for data that will change
+- 🧩 Missing data
+  - Prefer tensor operations like `pt.where()` over boolean masks
+
+:: right ::
 
 ```python
 # ❌ Wrong: pandas operations inside model
 with pm.Model():
     means = df.groupby('category').mean()  # This fails!
 
-# ✅ Correct: prepare data first  
+# ✅ Correct: prepare data first
 means = df.groupby('category').mean().values
 with pm.Model():
     data = pm.Data("data", means)
 ```
-
-<div class="mt-6 bg-blue-50 p-4 rounded">
-  <div class="text-blue-800 font-bold mb-2">🔧 Key Patterns</div>
-  <div class="text-sm text-blue-700">
-    • Complete pandas operations <strong>outside</strong> model context<br>
-    • Convert to numpy arrays before entering model<br>
-    • Use <code>pm.Data()</code> for data that might change<br>
-    • Use <code>pt.where()</code> for missing data (JAX/NumPyro compatible)
-  </div>
-</div>
 
 <!--
 Data preparation errors reflect fundamental misunderstandings about PyMC's computational model:
@@ -862,12 +911,17 @@ This separation prevents most data handling errors.
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # The Bayesian Recipe
 
-<div class="text-4xl mb-8">
+:: content ::
+
+<div class="text-4xl mb-6">
   Prior × Likelihood = Posterior
 </div>
 
@@ -875,10 +929,10 @@ layout: center
 with pm.Model() as model:
     # Prior: What we believe before seeing data
     mu = pm.Normal("mu", mu=0, sigma=10)
-    
+
     # Likelihood: How we think data was generated
     y = pm.Normal("y", mu=mu, sigma=1, observed=data)
-    
+
     # Posterior: Updated beliefs (computed by MCMC)
 ```
 
@@ -907,36 +961,37 @@ The beauty: everything is probabilistic, so you get full uncertainty quantificat
 -->
 
 ---
-layout: default
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # PyMC ❤️ ArviZ Integration
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div>
-    <div class="text-2xl mb-4">🎨 PyMC</div>
-    <ul class="text-lg space-y-2">
-      <li>Model specification</li>
-      <li>MCMC sampling</li>
-      <li>Prior/posterior predictive</li>
-      <li>Model comparison</li>
-    </ul>
-  </div>
-  <div>
-    <div class="text-2xl mb-4">📊 ArviZ</div>
-    <ul class="text-lg space-y-2">
-      <li>Visualization</li>
-      <li>Diagnostics</li>
-      <li>Model checking</li>
-      <li>Summary statistics</li>
-    </ul>
-  </div>
-</div>
+:: left ::
 
-<div class="mt-8 text-center">
-  <div class="text-lg text-gray-600">
-    Seamless workflow: PyMC → InferenceData → ArviZ
-  </div>
+<div class="text-2xl mb-4">🎨 PyMC</div>
+<ul class="text-lg space-y-2">
+  <li>Model specification</li>
+  <li>MCMC sampling</li>
+  <li>Prior/posterior predictive</li>
+  <li>Model comparison</li>
+</ul>
+
+:: right ::
+
+<div class="text-2xl mb-4">📊 ArviZ</div>
+<ul class="text-lg space-y-2">
+  <li>Visualization</li>
+  <li>Diagnostics</li>
+  <li>Model checking</li>
+  <li>Summary statistics</li>
+</ul>
+
+<div class="mt-6 text-center text-lg text-gray-600">
+  Seamless workflow: PyMC → InferenceData → ArviZ
 </div>
 
 <!--
@@ -971,13 +1026,12 @@ This separation of concerns lets each tool focus on what it does best.
 
 ---
 layout: section
+color: amber-light
 ---
 
 # 🏗️ Building Your First Model
 
-<div class="text-4xl mt-8">
-  From data to insights with real examples
-</div>
+From data to insights with real examples
 
 <!--
 Now comes the fun part - building and fitting actual Bayesian models!
@@ -995,21 +1049,24 @@ This isn't a toy example - we'll use real data and go through all the steps you'
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # 🧪 The Bioassay Problem
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+:: content ::
+
+<div class="grid grid-cols-2 gap-8 mt-6">
   <div>
-    <div class="text-2xl mb-4">The Question</div>
-    <div class="text-lg">
-      How does drug dose affect mortality in lab animals?
-    </div>
+    <div class="text-2xl mb-2">The Question</div>
+    <div class="text-lg">How does drug dose affect mortality in lab animals?</div>
   </div>
   <div>
-    <div class="text-2xl mb-4">The Data</div>
-    <div class="text-lg mt-4 space-y-2">
+    <div class="text-2xl mb-2">The Data</div>
+    <div class="text-lg mt-3 space-y-1">
       <div><strong>Dose:</strong> [-0.86, -0.3, -0.05, 0.73]</div>
       <div><strong>Animals:</strong> [5, 5, 5, 5]</div>
       <div><strong>Deaths:</strong> [0, 1, 3, 5]</div>
@@ -1017,9 +1074,7 @@ layout: center
   </div>
 </div>
 
-<div class="mt-8 text-center text-lg text-gray-600">
-  Classic dose-response modeling problem
-</div>
+<div class="mt-6 text-center text-lg text-gray-600">Classic dose-response modeling problem</div>
 
 <!--
 This is a classic problem in toxicology and pharmacology:
@@ -1049,10 +1104,15 @@ Clear dose-response relationship, but we want to model this probabilistically to
 -->
 
 ---
-layout: default
+layout: top-title
+align: c
 ---
 
+:: title ::
+
 # Building the Model
+
+:: content ::
 
 ```python {all|1-4|6-7|9-10|11-12|14-15}
 # The data
@@ -1064,10 +1124,10 @@ with pm.Model() as bioassay_model:
     # Priors for intercept and slope
     alpha = pm.Normal('alpha', mu=0, sigma=2.5)
     beta = pm.Normal('beta', mu=0, sigma=2.5)
-    
+
     # Logistic regression model
     theta = pm.invlogit(alpha + beta * dose)
-    
+
     # Binomial likelihood
     deaths = pm.Binomial('deaths', n=n_animals, p=theta, observed=n_deaths)
 ```
@@ -1104,33 +1164,34 @@ This is a generalized linear model (GLM) with logit link - a Bayesian version of
 -->
 
 ---
-layout: center
+layout: top-title-two-cols
+color: red-light
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # ⚠️ Common Modeling Errors
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="bg-red-50 p-4 rounded">
-    <div class="text-red-700 font-bold mb-2">🔢 Shape Mismatches</div>
-    <div class="text-sm text-red-600">
-      <code>ValueError: Input dimension mis-match</code><br>
-      Matrix vs element-wise operations<br>
-      Explicit shape specification needed
-    </div>
-  </div>
-  <div class="bg-orange-50 p-4 rounded">
-    <div class="text-orange-700 font-bold mb-2">📊 Broadcasting Issues</div>
-    <div class="text-sm text-orange-600">
-      Mixing <code>shape</code> and <code>dims</code><br>
-      Inconsistent coordinate systems<br>
-      Check tensor shapes explicitly
-    </div>
-  </div>
-</div>
+:: left ::
+
+### Frequent Issues
+
+- 🔢 Shape mismatches
+  - ValueError: Input dimension mis-match
+  - Matrix vs element-wise operations
+  - Specify shapes explicitly
+- 📊 Broadcasting issues
+  - Mixing <code>shape</code> and <code>dims</code>
+  - Inconsistent coordinate systems
+  - Check tensor shapes explicitly
+
+:: right ::
 
 ```python
-# ❌ Wrong: element-wise when you want matrix multiplication  
-mu = X * beta  
+# ❌ Wrong: element-wise when you want matrix multiplication
+mu = X * beta
 
 # ✅ Correct: explicit matrix operations
 beta = pm.Normal('beta', mu=0, sd=1, shape=(n_features,))
@@ -1162,12 +1223,17 @@ The pattern: beta with shape=(n_features,) and pm.math.dot(X, beta) works reliab
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Prior Predictive Check
 
-<img src="/plots/bioassay/prior_predictive.png" class="w-full max-w-3xl mx-auto">
+:: content ::
+
+<img src="/plots/bioassay/prior_predictive.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
 Before fitting the model, let's check if our priors make sense:
@@ -1196,10 +1262,15 @@ Prior predictive checks are crucial - they catch modeling mistakes before you wa
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
 
+:: title ::
+
 # Sampling the Posterior
+
+:: content ::
 
 ```python {all|1-2|4-5}
 with bioassay_model:
@@ -1210,7 +1281,7 @@ with bioassay_model:
 # ✓ Ran 4 parallel chains ✓ Checked convergence
 ```
 
-<div class="text-2xl mt-8 text-center">
+<div class="text-2xl mt-4 text-center">
   ⚡ Modern MCMC is (mostly) automatic! ⚡
 </div>
 
@@ -1245,12 +1316,17 @@ This is a huge advance over older MCMC methods that required lots of manual tuni
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Trace Plots: Checking Convergence
 
-<img src="/plots/bioassay/trace_plot.png" class="w-full max-w-3xl mx-auto">
+:: content ::
+
+<img src="/plots/bioassay/trace_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
 Trace plots are your first check for sampling problems:
@@ -1281,12 +1357,17 @@ Our traces look great! This suggests our MCMC sampling worked well and we can tr
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Posterior Distributions
 
-<img src="/plots/bioassay/posterior_plot.png" class="w-full max-w-3xl mx-auto">
+:: content ::
+
+<img src="/plots/bioassay/posterior_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
 Now let's look at what we learned about the parameters:
@@ -1317,14 +1398,17 @@ Compare to classical statistics:
 -->
 
 ---
-layout: default
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Parameter Relationships
 
-<div class="flex flex-col items-center justify-center h-full">
-<img src="/plots/bioassay/pair_plot.png" class="w-full max-w-3xl mx-auto">
-</div>
+:: content ::
+
+<img src="/plots/bioassay/pair_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
 The pair plot shows how parameters relate to each other:
@@ -1355,20 +1439,25 @@ This is another sign that our model and sampling worked well. Strong correlation
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
 
+:: title ::
+
 # Model Summary
+
+:: content ::
 
 ```python
 az.summary(trace, var_names=['alpha', 'beta'])
 ```
 
-```
-        mean     sd  hdi_3%  hdi_97%  mcse_mean  mcse_sd  ess_bulk  ess_tail  r_hat
-alpha  0.241  0.634  -0.985    1.430      0.010    0.008    4266.0    4089.0    1.0
+<div class="text-sm font-mono bg-gray-100 p-4 rounded mt-4">
+        mean     sd  hdi_3%  hdi_97%  mcse_mean  mcse_sd  ess_bulk  ess_tail  r_hat<br>
+alpha  0.241  0.634  -0.985    1.430      0.010    0.008    4266.0    4089.0    1.0<br>
 beta   4.034  1.447   1.532    6.869      0.022    0.018    5094.0    4724.0    1.0
-```
+</div>
 
 <div class="mt-6 text-center">
   <div class="text-2xl">🎯 Excellent diagnostics!</div>
@@ -1404,12 +1493,17 @@ This is what good Bayesian inference looks like - clean diagnostics and interpre
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Posterior Predictive Check
 
-<img src="/plots/bioassay/posterior_predictive.png" class="w-full max-w-3xl mx-auto">
+:: content ::
+
+<img src="/plots/bioassay/posterior_predictive.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
 The posterior predictive check validates our model against reality:
@@ -1444,10 +1538,16 @@ If we saw systematic deviations, we'd need to consider:
 -->
 
 ---
-layout: center
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
 ---
 
+:: title ::
+
 # Making Predictions
+
+:: left ::
 
 ```python {all|1-2|4-5|7-8}
 # Predict mortality at new doses
@@ -1461,7 +1561,13 @@ with bioassay_model:
 pred_mortality = posterior_pred.posterior_predictive['deaths']
 ```
 
-<div class="text-2xl mt-8 text-center">
+:: right ::
+
+- Define new inputs with `pm.Data`
+- Use `pm.sample_posterior_predictive`
+- Summarize predictive distributions
+
+<div class="text-2xl mt-4">
   🔮 Full uncertainty quantification for free!
 </div>
 
@@ -1495,13 +1601,12 @@ This uncertainty quantification is crucial for decision-making in pharmaceutical
 
 ---
 layout: section
+color: red-light
 ---
 
 # ⚠️ Common Pitfalls & Solutions
 
-<div class="text-4xl mt-8">
-  Avoiding the traps that catch beginners
-</div>
+Avoiding the traps that catch beginners
 
 <!--
 Even with modern tools like PyMC, Bayesian modeling can go wrong. Let me share the most common issues I see and how to fix them.
@@ -1517,31 +1622,36 @@ We'll cover:
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Convergence Diagnostics
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+:: content ::
+
+<div class="grid grid-cols-2 gap-6 mt-4">
   <div class="text-center">
-    <div class="text-4xl mb-4">📈</div>
-    <div class="text-2xl mb-2">R-hat < 1.01</div>
-    <div class="text-lg text-gray-600">Chains have converged</div>
+    <div class="text-3xl mb-2">📈</div>
+    <div class="text-xl mb-1">R-hat < 1.01</div>
+    <div class="text-sm text-gray-600">Chains have converged</div>
   </div>
   <div class="text-center">
-    <div class="text-4xl mb-4">📊</div>
-    <div class="text-2xl mb-2">ESS > 400</div>
-    <div class="text-lg text-gray-600">Enough effective samples</div>
+    <div class="text-3xl mb-2">📊</div>
+    <div class="text-xl mb-1">ESS > 400</div>
+    <div class="text-sm text-gray-600">Enough effective samples</div>
   </div>
   <div class="text-center">
-    <div class="text-4xl mb-4">⚠️</div>
-    <div class="text-2xl mb-2">Zero Divergences</div>
-    <div class="text-lg text-gray-600">No numerical issues</div>
+    <div class="text-3xl mb-2">⚠️</div>
+    <div class="text-xl mb-1">Zero Divergences</div>
+    <div class="text-sm text-gray-600">No numerical issues</div>
   </div>
   <div class="text-center">
-    <div class="text-4xl mb-4">🔗</div>
-    <div class="text-2xl mb-2">Good Mixing</div>
-    <div class="text-lg text-gray-600">Fuzzy caterpillars in traces</div>
+    <div class="text-3xl mb-2">🔗</div>
+    <div class="text-xl mb-1">Good Mixing</div>
+    <div class="text-sm text-gray-600">Fuzzy caterpillars in traces</div>
   </div>
 </div>
 
@@ -1576,18 +1686,23 @@ If any of these fail, don't interpret your results! Fix the underlying issue fir
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # The Dreaded Divergences 💥
 
-<div class="bg-red-50 p-6 rounded-lg mt-8">
-  <div class="text-red-800 text-xl mb-4">
+:: content ::
+
+<div class="bg-red-50 p-6 rounded-lg mt-4">
+  <div class="text-red-800 text-xl mb-3">
     "There were 47 divergences after tuning..."
   </div>
-  
+
   <div class="text-red-700">
-    <div class="text-lg mb-4">What this means:</div>
+    <div class="text-lg mb-3">What this means:</div>
     <ul class="text-sm space-y-1">
       <li>🚨 NUTS sampler had numerical problems</li>
       <li>📊 Your results may be biased</li>
@@ -1623,21 +1738,25 @@ The good news: divergences are usually fixable with the right approach. We'll se
 -->
 
 ---
-layout: two-cols
+layout: top-title-two-cols
+color: red-light
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # Diagnosing Sampling Problems
 
-::left::
+:: left ::
 
-<div class="text-2xl mb-4">🚨 "Bad Initial Energy"</div>
+### 🚨 "Bad Initial Energy"
 
 ```python
 # First: diagnose the problem
 with model:
     model.check_test_point()
-    
-# Shows which variables have infinite log-prob
+
 # Common fixes:
 pm.sample(init='adapt_diag')
 pm.sample(init='jitter+adapt_diag')
@@ -1648,18 +1767,19 @@ with model:
     trace = pm.sample(start=start)
 ```
 
-::right::
+:: right ::
 
-<div class="text-2xl mb-4">⚡ Divergence Solutions</div>
+### ⚡ Divergence Solutions
 
 ```python
 # Step 1: More conservative sampling
 pm.sample(target_accept=0.95, tune=2000)
 
-# Step 2: Model reparameterization  
+# Step 2: Model reparameterization
 # Non-centered for hierarchical models
 theta_raw = pm.Normal('theta_raw', 0, 1)
-theta = pm.Deterministic('theta', mu + tau * theta_raw)
+theta = pm.Deterministic('theta',
+                        mu + tau * theta_raw)
 
 # Step 3: Check prior constraints
 sigma = pm.HalfNormal('sigma', 1)  # not Normal
@@ -1698,30 +1818,25 @@ Most "Bad initial energy" errors trace to wrong prior constraints - fix those fi
 -->
 
 ---
-layout: center
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # Performance Optimization
 
-<div class="grid grid-cols-3 gap-6 mt-8">
-  <div class="text-center">
-    <div class="text-4xl mb-2">🚀</div>
-    <div class="text-xl mb-2">JAX Backend</div>
-    <div class="text-sm text-gray-600">5-10x speedup for many models</div>
-  </div>
-  <div class="text-center">
-    <div class="text-4xl mb-2">📊</div>
-    <div class="text-xl mb-2">Vectorization</div>
-    <div class="text-sm text-gray-600">Avoid loops, use tensor operations</div>
-  </div>
-  <div class="text-center">
-    <div class="text-4xl mb-2">🎯</div>
-    <div class="text-xl mb-2">Simpler Models</div>
-    <div class="text-sm text-gray-600">Start simple, add complexity gradually</div>
-  </div>
-</div>
+:: left ::
 
-<div class="mt-8">
+### Tips
+
+- 🚀 JAX backend: 5–10x speedups on many models
+- 📊 Vectorize: avoid loops; use tensor ops
+- 🎯 Start simple: add complexity gradually
+- ⚡ Standardize predictors (zero mean, unit variance)
+
+:: right ::
 
 ```python
 # Switch to JAX backend for speed
@@ -1731,8 +1846,6 @@ pm.set_backend('jax')
 # Or install numpyro for even more speed
 pip install numpyro
 ```
-
-</div>
 
 <!--
 If your models are running slowly, here are the main optimization strategies:
@@ -1767,39 +1880,39 @@ Remember: premature optimization is the root of all evil. Get your model working
 -->
 
 ---
-layout: center
+layout: top-title
 ---
 
 # Prior Specification Problems
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="bg-red-50 p-4 rounded">
-    <div class="text-red-700 font-bold mb-2">❌ Wrong Constraints</div>
-    <div class="text-sm text-red-600 font-mono">
+<div class="grid grid-cols-2 gap-8 mt-6">
+  <div class="bg-red-50 p-6 rounded-lg">
+    <div class="text-red-700 font-bold mb-3 text-lg">❌ Wrong Constraints</div>
+    <div class="text-base text-red-600 font-mono">
       # Allows negative values!
       sigma = pm.Normal('sigma', 0, 5)
     </div>
-    <div class="text-sm text-red-600 mt-2">
+    <div class="text-base text-red-600 mt-3">
       → "Bad initial energy" errors<br>
       → Impossible likelihoods
     </div>
   </div>
-  <div class="bg-green-50 p-4 rounded">
-    <div class="text-green-700 font-bold mb-2">✅ Proper Constraints</div>
-    <div class="text-sm text-green-600 font-mono">
+  <div class="bg-green-50 p-6 rounded-lg">
+    <div class="text-green-700 font-bold mb-3 text-lg">✅ Proper Constraints</div>
+    <div class="text-base text-green-600 font-mono">
       # Ensures positive values
       sigma = pm.HalfNormal('sigma', 5)
     </div>
-    <div class="text-sm text-green-600 mt-2">
+    <div class="text-base text-green-600 mt-3">
       → Stable sampling<br>
       → Reasonable constraint
     </div>
   </div>
 </div>
 
-<div class="mt-6 bg-blue-50 p-4 rounded">
-  <div class="text-blue-800 font-bold mb-2">🎯 Golden Rules</div>
-  <div class="text-sm text-blue-700">
+<div class="mt-6 bg-blue-50 p-6 rounded-lg">
+  <div class="text-blue-800 font-bold mb-3 text-lg">🎯 Golden Rules</div>
+  <div class="text-base text-blue-700">
     • <strong>Standard deviations:</strong> HalfNormal, not Normal<br>
     • <strong>Probabilities:</strong> Beta(2,2), not Uniform(0,1)<br>
     • <strong>Coefficients:</strong> Normal(0, 2.5) for standardized data<br>
@@ -1836,16 +1949,21 @@ The pattern: choose distributions whose support matches parameter constraints. P
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
+
+:: title ::
 
 # Debugging Workflow
 
-<div class="text-2xl mb-8">When things go wrong...</div>
+:: content ::
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="text-2xl mb-6">When things go wrong...</div>
+
+<div class="grid grid-cols-2 gap-8 mt-4">
   <div>
-    <div class="text-xl mb-4">🔍 Diagnostic Steps</div>
+    <div class="text-xl mb-3">🔍 Diagnostic Steps</div>
     <ol class="text-sm space-y-2">
       <li>1. Check trace plots</li>
       <li>2. Look at R-hat values</li>
@@ -1855,7 +1973,7 @@ layout: center
     </ol>
   </div>
   <div>
-    <div class="text-xl mb-4">🛠️ Fix Strategy</div>
+    <div class="text-xl mb-3">🛠️ Fix Strategy</div>
     <ol class="text-sm space-y-2">
       <li>1. Try sampler tuning first</li>
       <li>2. Examine prior predictive samples</li>
@@ -1894,31 +2012,38 @@ Remember: a simple model that works is better than a complex model that doesn't.
 -->
 
 ---
-layout: center
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # 🤔 Conceptual Clarifications
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="bg-yellow-50 p-4 rounded">
-    <div class="text-yellow-700 font-bold mb-2">🗺️ find_MAP() Deprecation</div>
-    <div class="text-sm text-yellow-600">
-      <strong>Old tutorials say:</strong> Start with MAP<br>
-      <strong>Modern practice:</strong> Just call pm.sample()<br>
-      <strong>Why?</strong> MAP isn't representative in high dimensions
-    </div>
-  </div>
-  <div class="bg-blue-50 p-4 rounded">
-    <div class="text-blue-700 font-bold mb-2">🔢 PyMC3 vs PyMC</div>
-    <div class="text-sm text-blue-600">
-      <strong>PyMC3:</strong> Old name (legacy)<br>
-      <strong>PyMC:</strong> Current name (v4+)<br>
-      <strong>Migration:</strong> Most code works with minor changes
-    </div>
+:: left ::
+
+<div class="bg-yellow-50 p-4 rounded">
+  <div class="text-yellow-700 font-bold mb-2">🗺️ find_MAP() Deprecation</div>
+  <div class="text-sm text-yellow-600">
+    <strong>Old tutorials say:</strong> Start with MAP<br>
+    <strong>Modern practice:</strong> Just call pm.sample()<br>
+    <strong>Why?</strong> MAP isn't representative in high dimensions
   </div>
 </div>
 
-<div class="mt-6 bg-green-50 p-4 rounded">
+<div class="bg-blue-50 p-4 rounded mt-4">
+  <div class="text-blue-700 font-bold mb-2">🔢 PyMC3 vs PyMC</div>
+  <div class="text-sm text-blue-600">
+    <strong>PyMC3:</strong> Old name (legacy)<br>
+    <strong>PyMC:</strong> Current name (v4+)<br>
+    <strong>Migration:</strong> Most code works with minor changes
+  </div>
+</div>
+
+:: right ::
+
+<div class="bg-green-50 p-4 rounded">
   <div class="text-green-800 font-bold mb-2">📊 Prior vs Posterior Predictive</div>
   <div class="text-sm text-green-700">
     <strong>Prior predictive:</strong> Validate model assumptions <em>before</em> seeing data<br>
@@ -1956,30 +2081,38 @@ These conceptual issues cause anxiety but are easily resolved with modern workfl
 -->
 
 ---
-layout: center
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # ArviZ: Your Visualization Partner
 
-<div class="grid grid-cols-3 gap-6 mt-8">
+:: left ::
+
+<div class="grid grid-cols-1 gap-4 mt-4">
   <div class="text-center">
-    <div class="text-4xl mb-2">📊</div>
-    <div class="text-xl mb-2">Trace Plots</div>
+    <div class="text-4xl mb-1">📊</div>
+    <div class="text-xl mb-1">Trace Plots</div>
     <div class="text-sm">Check convergence</div>
   </div>
   <div class="text-center">
-    <div class="text-4xl mb-2">🎨</div>
-    <div class="text-xl mb-2">Forest Plots</div>
+    <div class="text-4xl mb-1">🎨</div>
+    <div class="text-xl mb-1">Forest Plots</div>
     <div class="text-sm">Compare parameters</div>
   </div>
   <div class="text-center">
-    <div class="text-4xl mb-2">🔍</div>
-    <div class="text-xl mb-2">Model Checking</div>
+    <div class="text-4xl mb-1">🔍</div>
+    <div class="text-xl mb-1">Model Checking</div>
     <div class="text-sm">Validate assumptions</div>
   </div>
 </div>
 
-<img src="/plots/bioassay/forest_plot.png" class="w-full max-w-2xl mx-auto mt-8">
+:: right ::
+
+<img src="/plots/bioassay/forest_plot.png" class="w-full max-w-xl mx-auto mt-2" style="max-height: 60vh; object-fit: contain;">
 
 <!--
 ArviZ is the standard tool for Bayesian visualization and diagnostics:
@@ -2018,10 +2151,15 @@ The forest plot shown illustrates parameter estimates with uncertainty - much mo
 -->
 
 ---
-layout: center
+layout: top-title
+align: c
 ---
 
+:: title ::
+
 # Bambi: High-Level Modeling
+
+:: content ::
 
 ```python {all|1-2|4-5|7-8}
 import bambi as bmb
@@ -2078,36 +2216,37 @@ Bambi is perfect for 80% of applied statistical modeling, while PyMC handles the
 -->
 
 ---
-layout: center
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
 ---
+
+:: title ::
 
 # PyMC-Experimental: Cutting Edge
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div>
-    <div class="text-2xl mb-4">🧪 New Methods</div>
-    <ul class="text-lg space-y-2">
-      <li>Variational inference</li>
-      <li>Gaussian processes</li>
-      <li>State space models</li>
-      <li>Causal inference</li>
-    </ul>
-  </div>
-  <div>
-    <div class="text-2xl mb-4">🚀 Experimental Features</div>
-    <ul class="text-lg space-y-2">
-      <li>New samplers</li>
-      <li>Advanced diagnostics</li>
-      <li>Model comparison</li>
-      <li>Optimization tools</li>
-    </ul>
-  </div>
-</div>
+:: left ::
 
-<div class="mt-8 text-center">
-  <div class="text-lg text-gray-600">
-    💡 Features graduate to main PyMC when stable
-  </div>
+<div class="text-2xl mb-3">🧪 New Methods</div>
+<ul class="text-lg space-y-2">
+  <li>Variational inference</li>
+  <li>Gaussian processes</li>
+  <li>State space models</li>
+  <li>Causal inference</li>
+</ul>
+
+:: right ::
+
+<div class="text-2xl mb-3">🚀 Experimental Features</div>
+<ul class="text-lg space-y-2">
+  <li>New samplers</li>
+  <li>Advanced diagnostics</li>
+  <li>Model comparison</li>
+  <li>Optimization tools</li>
+</ul>
+
+<div class="mt-6 text-center text-lg text-gray-600">
+  💡 Features graduate to main PyMC when stable
 </div>
 
 <!--
@@ -2223,24 +2362,90 @@ The community motto: "No question is too basic!" Everyone was a beginner once.
 -->
 
 ---
-layout: center
+layout: top-title
+---
+
+# 📓 Finding PyMC Example Notebooks
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+  <div>
+    <div class="text-2xl mb-4 text-blue-400">🎯 Official Examples</div>
+    <ul class="text-lg space-y-3">
+      <li><strong>pymc.io/projects/examples</strong></li>
+      <li>100+ worked examples</li>
+      <li>Real datasets & complete workflows</li>
+      <li>Organized by topic & difficulty</li>
+    </ul>
+  </div>
+  <div>
+    <div class="text-2xl mb-4 text-green-400">🔍 How to Use Them</div>
+    <ul class="text-lg space-y-3">
+      <li>Start with similar problem types</li>
+      <li>Copy & adapt the structure</li>
+      <li>Focus on model specification</li>
+      <li>Check diagnostic patterns</li>
+    </ul>
+  </div>
+</div>
+
+<div class="mt-8 bg-blue-50 p-6 rounded-lg">
+  <div class="text-blue-800 font-bold mb-3 text-lg">💡 Pro Tips</div>
+  <div class="text-base text-blue-700">
+    • <strong>Browse by domain:</strong> Finance, Biology, Marketing, etc.<br>
+    • <strong>Check the notebook dates:</strong> Newer examples use current best practices<br>
+    • <strong>Run examples locally:</strong> Experiment with different data and parameters<br>
+    • <strong>Read the explanations:</strong> Understanding why > copying code
+  </div>
+</div>
+
+<!--
+The PyMC example gallery is one of the best resources for learning:
+
+Official Example Gallery:
+- Located at pymc.io/projects/examples
+- Over 100 worked examples covering many domains
+- Each example includes complete workflow from data to interpretation
+- Examples are organized by topic (regression, time series, etc.) and difficulty level
+- All examples are Jupyter notebooks you can download and run
+
+How to Use Examples Effectively:
+1. Find examples similar to your problem domain
+2. Don't just copy code - understand the model structure
+3. Pay attention to prior choices and their justification
+4. Look at diagnostic plots and interpretation
+5. Adapt the structure to your specific data and questions
+
+Categories Include:
+- Generalized Linear Models
+- Hierarchical/Multilevel Models
+- Time Series Analysis
+- Gaussian Processes
+- Causal Inference
+- Survival Analysis
+- And many more specialized topics
+
+The examples are maintained by the PyMC team and community contributors, so they represent current best practices and working code.
+-->
+
+---
+layout: top-title
 ---
 
 # Getting Help & Contributing
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="bg-blue-50 p-6 rounded">
+<div class="grid grid-cols-2 gap-8 mt-6">
+  <div class="bg-blue-50 p-6 rounded-lg">
     <div class="text-blue-800 text-xl mb-4">🆘 Need Help?</div>
-    <ul class="text-blue-700 text-sm space-y-2">
+    <ul class="text-blue-700 text-base space-y-2">
       <li>✅ Search discourse.pymc.io first</li>
       <li>✅ Include minimal working example</li>
       <li>✅ Share error messages and diagnostics</li>
       <li>✅ Describe what you've tried</li>
     </ul>
   </div>
-  <div class="bg-green-50 p-6 rounded">
+  <div class="bg-green-50 p-6 rounded-lg">
     <div class="text-green-800 text-xl mb-4">🤝 Want to Contribute?</div>
-    <ul class="text-green-700 text-sm space-y-2">
+    <ul class="text-green-700 text-base space-y-2">
       <li>📝 Documentation improvements</li>
       <li>🐛 Bug reports with examples</li>
       <li>💡 Feature suggestions</li>
@@ -2300,13 +2505,12 @@ Every contribution, no matter how small, is valued by the community!
 
 ---
 layout: section
+color: purple-light
 ---
 
 # 🚀 Future Directions
 
-<div class="text-4xl mt-8">
-  Where PyMC is heading
-</div>
+Where PyMC is heading
 
 <!--
 Let's look at where PyMC and Bayesian modeling are heading in the next few years.
