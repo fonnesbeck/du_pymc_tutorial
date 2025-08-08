@@ -4,7 +4,7 @@ title: Getting Started with PyMC v5
 info: |
   ## Getting Started with PyMC v5
   Data Umbrella Tutorial
-  
+
   A 1-hour introduction to probabilistic programming and Bayesian modeling with PyMC.
 author: Christopher Fonnesbeck
 organization: PyMC Labs
@@ -437,7 +437,7 @@ align: c
 
 :: content ::
 
-```python {all|1-2|4-5|7-8}
+```python
 import pymc as pm
 print(f"PyMC version: {pm.__version__}")
 
@@ -594,6 +594,34 @@ The g++ compiler warning on Windows causes 10-100x performance degradation! Inst
     </div>
   </div>
 </div>
+---
+layout: top-title
+color: orange-light
+align: c
+---
+
+:: title ::
+
+# ⚡ Performance: BLAS Backends
+
+:: content ::
+
+- If you see: "Using NumPy C-API based implementation" your BLAS is slow
+- Intel/AMD: prefer MKL builds via conda-forge (numpy, scipy)
+- Apple Silicon: use conda-forge OpenBLAS/Accelerate (avoid MKL)
+
+```bash
+conda install -c conda-forge "numpy>=2" "scipy>=1.12"
+```
+
+<!--
+BLAS choice strongly affects linear algebra speed.
+- The warning indicates NumPy is not using an optimized BLAS
+- On Intel, MKL builds from conda-forge are fast/stable
+- On Apple Silicon, use conda-forge (OpenBLAS/Accelerate) rather than MKL
+Also consider nutpie or JAX backends for additional speedups.
+-->
+
 
 <!--
 Installation issues are the most common beginner pain points - here's what actually works:
@@ -664,7 +692,7 @@ align: c
   </div>
 </div>
 
-```python {all|1|2-3|5-6}
+```python
 with pm.Model() as model:
     # All random variables go here
     mu = pm.Normal("mu", mu=0, sigma=10)
@@ -706,7 +734,7 @@ align: c
 
 <div class="mt-4">
 
-```python {all|1-2|4-5|7-8}
+```python
 # Unobserved (parameters to estimate)
 mu = pm.Normal("mu", mu=0, sigma=10)
 sigma = pm.HalfNormal("sigma", sigma=1)
@@ -762,6 +790,7 @@ PyMC provides a comprehensive set of probability distributions:
 
 Continuous Distributions:
 - Normal: The workhorse, symmetric, unbounded
+
 - Beta: For probabilities and proportions (0 to 1)
 - Exponential: For positive values, waiting times
 - Gamma: Positive values with more flexibility than exponential
@@ -789,14 +818,13 @@ color: light
 align: c-lt-lt
 columns: is-6
 ---
-
 :: title ::
 
 # Observed Data
 
 :: left ::
 
-```python {all|1-2|4-5|6-7|8}
+```python
 # Your actual data
 data = np.array([1.2, 2.3, 1.8, 2.9, 3.1])
 
@@ -855,12 +883,13 @@ columns: is-6
 
 ### Common Mistakes
 
+
 - ❌ Pandas operations inside model context
   - PyMC operates on tensors, not DataFrames
 - ✅ Prepare data first
   - Do pandas ops outside the model, then use `.values`
 - 🔁 Updatable data
-  - Use `pm.Data()` for data that will change
+  - Use `pm.MutableData()` for data that will change
 - 🧩 Missing data
   - Prefer tensor operations like `pt.where()` over boolean masks
 
@@ -874,7 +903,7 @@ with pm.Model():
 # ✅ Correct: prepare data first
 means = df.groupby('category').mean().values
 with pm.Model():
-    data = pm.Data("data", means)
+    data = pm.MutableData("data", means)
 ```
 
 <!--
@@ -889,7 +918,7 @@ The Core Problem:
 The Solution Pattern:
 1. Complete ALL pandas operations outside the model context
 2. Convert results to numpy arrays (.values)
-3. Use pm.Data() for data that needs updating
+3. Use pm.MutableData() for data that needs updating
 4. Enter the model context only with prepared tensors
 
 Missing Data Handling:
@@ -901,7 +930,7 @@ Missing Data Handling:
 Categorical Variables:
 - Don't one-hot encode everything for PyMC
 - Use pd.factorize() for index-based encoding
-- Combine with coordinate systems for meaningful labels  
+- Combine with coordinate systems for meaningful labels
 - More efficient and scales better for hierarchical models
 
 Best Practice Workflow:
@@ -925,7 +954,7 @@ align: c
   Prior × Likelihood = Posterior
 </div>
 
-```python {all|2-3|5-6|8}
+```python
 with pm.Model() as model:
     # Prior: What we believe before seeing data
     mu = pm.Normal("mu", mu=0, sigma=10)
@@ -1086,6 +1115,11 @@ The Setup:
 - Goal: model the dose-response relationship
 
 Why this matters:
+# The data
+# Standardize predictors for robust sampling
+dose_raw = np.array([-0.86, -0.3, -0.05, 0.73])
+dose = (dose_raw - dose_raw.mean()) / dose_raw.std()
+
 - Understand drug safety and efficacy
 - Determine safe dosage ranges
 - Predict effects at untested doses
@@ -1114,13 +1148,16 @@ align: c
 
 :: content ::
 
-```python {all|1-4|6-7|9-10|11-12|14-15}
+```python
 # The data
 dose = np.array([-0.86, -0.3, -0.05, 0.73])
 n_animals = np.array([5, 5, 5, 5])
 n_deaths = np.array([0, 1, 3, 5])
 
 with pm.Model() as bioassay_model:
+    # Updatable input
+    dose = pm.MutableData('dose', dose)
+
     # Priors for intercept and slope
     alpha = pm.Normal('alpha', mu=0, sigma=2.5)
     beta = pm.Normal('beta', mu=0, sigma=2.5)
@@ -1272,7 +1309,7 @@ align: c
 
 :: content ::
 
-```python {all|1-2|4-5}
+```python
 with bioassay_model:
     trace = pm.sample(2000, tune=1000, chains=4, random_seed=42)
 
@@ -1538,6 +1575,22 @@ If we saw systematic deviations, we'd need to consider:
 -->
 
 ---
+layout: top-title
+align: c
+---
+
+:: title ::
+
+# Predictive Checks: Joint vs Marginals
+
+:: content ::
+
+- Use pm.sample_posterior_predictive(trace): draws jointly from posterior
+- Don’t simulate from independent parameter marginals (loses correlations)
+- ArviZ plots assume joint InferenceData draws
+
+
+---
 layout: top-title-two-cols
 align: c-lt-lt
 columns: is-6
@@ -1549,7 +1602,7 @@ columns: is-6
 
 :: left ::
 
-```python {all|1-2|4-5|7-8}
+```python
 # Predict mortality at new doses
 new_doses = np.array([-1.0, 0.0, 1.0])
 
@@ -1563,7 +1616,7 @@ pred_mortality = posterior_pred.posterior_predictive['deaths']
 
 :: right ::
 
-- Define new inputs with `pm.Data`
+- Define new inputs with `pm.MutableData`
 - Use `pm.sample_posterior_predictive`
 - Summarize predictive distributions
 
@@ -1571,33 +1624,6 @@ pred_mortality = posterior_pred.posterior_predictive['deaths']
   🔮 Full uncertainty quantification for free!
 </div>
 
-<!--
-One of the biggest advantages of Bayesian modeling - making predictions with uncertainty:
-
-The Process:
-1. Define new dose values we want predictions for
-2. Use pm.set_data() to update the model with new doses (requires dose to be defined with pm.Data)
-3. Sample from posterior predictive distribution
-4. Get full distribution of possible outcomes
-
-What we get:
-- Not just point predictions, but full distributions
-- Credible intervals for mortality rates
-- Probability of any specific outcome
-- Proper uncertainty propagation from parameter uncertainty
-
-Example interpretations:
-- "At dose -1.0, we predict 0-2 deaths out of 5 animals with 95% probability"
-- "At dose 1.0, we predict 4-5 deaths out of 5 animals with 95% probability"
-- "The median predicted mortality at dose 0.0 is 60%"
-
-Compared to classical approaches:
-- Classical: point prediction ± standard error
-- Bayesian: full predictive distribution
-- Can answer any question: "What's the probability that fewer than 2 animals die?"
-
-This uncertainty quantification is crucial for decision-making in pharmaceutical and toxicology applications.
--->
 
 ---
 layout: section
@@ -1654,6 +1680,37 @@ align: c
     <div class="text-sm text-gray-600">Fuzzy caterpillars in traces</div>
   </div>
 </div>
+
+---
+layout: top-title
+align: c
+---
+
+:: title ::
+
+# MAP is (Mostly) History
+
+:: content ::
+
+- find_MAP is discouraged for NUTS initialization
+- Prefer pm.sample(init="adapt_diag" or "jitter+adapt_diag")
+- Use MAP only for diagnosis, sparingly
+
+---
+layout: top-title
+align: c
+---
+:: title ::
+
+# PyMC3 vs PyMC v4/v5
+
+:: content ::
+
+- PyMC3 was renamed to PyMC at v4; v5 is current
+- Most v3 code works with minor edits, but use latest docs
+
+- Prefer pm.sample(init="adapt_diag" or "jitter+adapt_diag")
+- Use MAP only for diagnosis, sparingly
 
 <!--
 Always check these four diagnostics before trusting your results:
@@ -1756,7 +1813,6 @@ columns: is-6
 # First: diagnose the problem
 with model:
     model.check_test_point()
-
 # Common fixes:
 pm.sample(init='adapt_diag')
 pm.sample(init='jitter+adapt_diag')
@@ -1791,12 +1847,12 @@ sigma = pm.HalfNormal('sigma', 1)  # not Normal
 "Bad Initial Energy" Diagnosis:
 - Cryptic error message but straightforward diagnosis process
 - Run model.check_test_point() to identify which variables have infinite log-probability
-- Usually caused by inappropriate priors (Normal for positive parameters) 
+- Usually caused by inappropriate priors (Normal for positive parameters)
 - Or initialization in impossible regions of parameter space
 
 Practical Fixes:
 - init='adapt_diag': better initialization using diagonal mass matrix
-- init='jitter+adapt_diag': adds random jitter to starting values  
+- init='jitter+adapt_diag': adds random jitter to starting values
 - pm.find_MAP(): finds mode to start from (use sparingly, discouraged for modern practice)
 - Check and fix prior specifications first
 
@@ -1809,7 +1865,7 @@ Divergence Solutions (Hierarchical):
 
 Systematic Approach:
 1. Check model.check_test_point() for infinite values
-2. Fix prior constraints (HalfNormal for positive parameters)  
+2. Fix prior constraints (HalfNormal for positive parameters)
 3. Try conservative sampling (target_accept=0.95, tune=2000)
 4. Reparameterize hierarchical components if needed
 5. Only then consider more advanced techniques
@@ -1883,7 +1939,11 @@ Remember: premature optimization is the root of all evil. Get your model working
 layout: top-title
 ---
 
+:: title ::
+
 # Prior Specification Problems
+
+:: content ::
 
 <div class="grid grid-cols-2 gap-8 mt-6">
   <div class="bg-red-50 p-6 rounded-lg">
@@ -1925,7 +1985,7 @@ The classic beginner mistake: using Normal priors for parameters that must be po
 
 Wrong Constraint Priors:
 - sigma = pm.Normal('sigma', mu=0, sigma=5) allows negative values
-- Creates "Bad initial energy" errors when MCMC draws negative standard deviations  
+- Creates "Bad initial energy" errors when MCMC draws negative standard deviations
 - Impossible likelihoods when sigma < 0
 - This is the most frustrating category of errors for beginners
 
@@ -2071,7 +2131,7 @@ Version Confusion (PyMC3 vs PyMC):
 
 Prior vs Posterior Predictive Confusion:
 - Prior predictive: sample from model before seeing data, validates assumptions
-- Posterior predictive: sample from fitted model, compares to observed data  
+- Posterior predictive: sample from fitted model, compares to observed data
 - Both require joint distributions because parameters are typically correlated
 - Common mistake: using marginal distributions instead of joint samples
 - Prior predictive catches model specification errors early
@@ -2161,7 +2221,7 @@ align: c
 
 :: content ::
 
-```python {all|1-2|4-5|7-8}
+```python
 import bambi as bmb
 import pandas as pd
 
@@ -2365,7 +2425,11 @@ The community motto: "No question is too basic!" Everyone was a beginner once.
 layout: top-title
 ---
 
+:: title ::
+
 # 📓 Finding PyMC Example Notebooks
+
+:: content ::
 
 <div class="grid grid-cols-2 gap-8 mt-6">
   <div>
@@ -2431,7 +2495,12 @@ The examples are maintained by the PyMC team and community contributors, so they
 layout: top-title
 ---
 
+
+:: title :: 
+
 # Getting Help & Contributing
+
+:: content ::
 
 <div class="grid grid-cols-2 gap-8 mt-6">
   <div class="bg-blue-50 p-6 rounded-lg">
