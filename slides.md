@@ -35,8 +35,6 @@ by **Christopher Fonnesbeck** • *PyMC Labs*
 \* Data Umbrella Tutorial
 
 <!--
-Welcome to this comprehensive 1-hour tutorial on PyMC v5!
-
 Today we'll cover:
 - What PyMC is and why you should use it
 - How to install and set up PyMC
@@ -46,7 +44,6 @@ Today we'll cover:
 - Common pitfalls and how to avoid them
 - The broader PyMC ecosystem
 
-By the end, you'll have hands-on experience with Bayesian modeling and know how to build, fit, and diagnose your own models.
 -->
 
 ---
@@ -85,8 +82,6 @@ align: c
 </div>
 
 <!--
-This tutorial is designed to be practical and hands-on. We'll start with the basics but quickly move to real examples.
-
 The four key areas we'll focus on:
 
 1. Bayesian Thinking: Understanding how to think in terms of uncertainty, priors, and updating beliefs with data.
@@ -114,11 +109,11 @@ align: c
 
 <div class="text-center">
   <div class="text-6xl mb-8 mt-8">
-    🐍 + 📊 + 🧠 = PyMC
+    📊 + 🧠 + 🐍 = PyMC
   </div>
 
   <div class="text-2xl text-gray-600">
-    Python + Statistics + Probabilistic Thinking
+    Statistics + Probabilistic Thinking + Python
   </div>
 </div>
 
@@ -200,73 +195,116 @@ align: c
 
 :: content ::
 
-<div class="grid grid-cols-2 gap-8 mt-6">
-  <div>
-    <div class="text-2xl mb-4 text-blue-400">🏥 Healthcare</div>
-    <ul class="text-base space-y-2">
-      <li>Clinical trial design</li>
-      <li>Drug dosing optimization</li>
-      <li>Epidemiological modeling</li>
-      <li>Diagnostic test evaluation</li>
-    </ul>
+<div class="grid grid-cols-3 gap-6 mt-4">
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-blue-400">🏥</div>
+    <div class="text-lg font-semibold">Healthcare</div>
   </div>
-  <div>
-    <div class="text-2xl mb-4 text-green-400">💰 Finance</div>
-    <ul class="text-base space-y-2">
-      <li>Risk modeling</li>
-      <li>Portfolio optimization</li>
-      <li>Credit scoring</li>
-      <li>Market forecasting</li>
-    </ul>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-green-400">💰</div>
+    <div class="text-lg font-semibold">Finance</div>
   </div>
-  <div>
-    <div class="text-2xl mb-4 text-purple-400">🧬 Science</div>
-    <ul class="text-base space-y-2">
-      <li>Parameter estimation</li>
-      <li>Model comparison</li>
-      <li>Experimental design</li>
-      <li>Meta-analysis</li>
-    </ul>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-purple-400">🧬</div>
+    <div class="text-lg font-semibold">Biology & Genomics</div>
   </div>
-  <div>
-    <div class="text-2xl mb-4 text-orange-400">📱 Tech</div>
-    <ul class="text-base space-y-2">
-      <li>A/B testing</li>
-      <li>Recommendation systems</li>
-      <li>Anomaly detection</li>
-      <li>User behavior modeling</li>
-    </ul>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-orange-400">📱</div>
+    <div class="text-lg font-semibold">Technology</div>
+  </div>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-cyan-400">🌌</div>
+    <div class="text-lg font-semibold">Physics & Astronomy</div>
+  </div>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-indigo-400">🧠</div>
+    <div class="text-lg font-semibold">Social Sciences</div>
+  </div>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-red-400">🏭</div>
+    <div class="text-lg font-semibold">Manufacturing</div>
+  </div>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-teal-400">🌍</div>
+    <div class="text-lg font-semibold">Ecology & Climate</div>
+  </div>
+  <div class="text-center">
+    <div class="text-3xl mb-2 text-yellow-400">⚡</div>
+    <div class="text-lg font-semibold">Energy & Utilities</div>
   </div>
 </div>
 
+<div class="mt-6 text-center text-lg text-gray-600">
+  PyMC is used wherever uncertainty quantification matters
+</div>
+
 <!--
-PyMC is used across many industries because uncertainty is everywhere:
+PyMC is used across virtually every industry and scientific field because uncertainty is everywhere:
 
 Healthcare:
 - Clinical trials need to account for patient variability
 - Drug dosing must be personalized based on patient characteristics
 - Epidemiological models help track disease spread with uncertainty
 - Diagnostic tests have false positive/negative rates that need proper handling
+- Survival analysis for treatment effectiveness
 
 Finance:
 - Risk models must quantify uncertainty in potential losses
 - Portfolio optimization needs to account for parameter uncertainty
 - Credit scoring benefits from hierarchical models for different populations
 - Market forecasting explicitly acknowledges we don't know the future
+- Fraud detection with adaptive thresholds
 
-Science:
-- Parameter estimation with proper uncertainty quantification
-- Model comparison using information criteria and cross-validation
-- Experimental design optimizes information gain
-- Meta-analysis combines evidence from multiple studies
+Biology & Genomics:
+- Gene expression analysis with biological variability
+- Population genetics and evolutionary dynamics
+- Protein structure prediction with uncertainty
+- Personalized medicine based on genomic data
+- Systems biology modeling of complex pathways
 
 Technology:
 - A/B testing with proper statistical inference
 - Recommendation systems that adapt to user preferences
 - Anomaly detection that adapts to changing baselines
 - User behavior models that capture individual differences
+- Natural language processing uncertainty
 
-The common thread: all these applications involve uncertainty that needs to be properly quantified and propagated.
+Physics & Astronomy:
+- Particle physics data analysis at CERN
+- Cosmological parameter estimation
+- Exoplanet detection from noisy telescope data
+- Quantum system calibration
+- Material science property prediction
+
+Psychology & Social Sciences:
+- Cognitive modeling of human behavior
+- Social network analysis and influence
+- Educational assessment with item response theory
+- Political polling and election forecasting
+- Economic behavior modeling
+
+Manufacturing:
+- Quality control with statistical process monitoring
+- Predictive maintenance for equipment
+- Supply chain optimization under uncertainty
+- Reliability analysis and failure prediction
+- Process optimization with noisy measurements
+
+Ecology & Climate:
+- Climate change modeling and projections
+- Species distribution and biodiversity assessment
+- Ecosystem dynamics and food webs
+- Conservation planning under uncertainty
+- Environmental impact assessment
+
+Energy & Utilities:
+- Load forecasting for power grids
+- Renewable energy production prediction
+- Asset reliability and maintenance scheduling
+- Oil & gas exploration uncertainty
+- Smart grid optimization
+
+The common thread: all these applications involve uncertainty that needs to be properly quantified and propagated. PyMC provides the tools to handle this uncertainty rigorously.
 -->
 
 
@@ -342,6 +380,152 @@ Never use regular conda channel - always use conda-forge.
 -->
 
 ---
+layout: top-title
+align: c
+---
+
+:: title ::
+
+# 🆕 Fresh Environment Setup
+
+:: content ::
+
+<div class="text-4xl mb-6 font-mono">
+  conda create -c conda-forge -n pymc_env "pymc>=5"
+</div>
+
+<div class="text-4xl mb-6 font-mono">
+  conda activate pymc_env
+</div>
+
+<div class="text-lg text-gray-500 mb-6">
+  (Recommended for beginners and clean installations)
+</div>
+
+<div class="text-lg">
+  ✅ Isolated from other packages<br>
+  ✅ Consistent dependency versions<br>
+  ✅ Easy to recreate if needed<br>
+  ✅ Python 3.10+ automatically included
+</div>
+
+<!--
+Creating a dedicated environment is the safest approach:
+
+Why a fresh environment?
+- Avoids conflicts with existing packages
+- Ensures consistent versions across the numerical stack
+- Easy to delete and recreate if something goes wrong
+- Isolation prevents breaking other projects
+
+The command breakdown:
+```bash
+# Create new environment with PyMC 5+
+conda create -c conda-forge -n pymc_env "pymc>=5"
+
+# Activate the environment
+conda activate pymc_env
+```
+
+Additional packages you might want:
+```bash
+# For Jupyter notebooks
+conda install -c conda-forge jupyter
+
+# For performance (optional)
+conda install -c conda-forge nutpie
+
+# For GPU acceleration (optional)
+conda install -c conda-forge numpyro
+```
+
+Environment management tips:
+- Use descriptive names: pymc_project, bayesian_analysis, etc.
+- Document your environment: conda env export > environment.yml
+- Share with others: conda env create -f environment.yml
+- Clean up unused environments: conda env remove -n old_env_name
+
+This approach prevents the majority of installation issues beginners encounter.
+-->
+
+---
+layout: top-title
+align: c
+---
+
+:: title ::
+
+# 🧚 Pixi Installation
+
+:: content ::
+
+<div class="text-4xl mb-6 font-mono">
+  pixi init my-pymc-project
+</div>
+
+<div class="text-4xl mb-6 font-mono">
+  pixi add pymc
+</div>
+
+<div class="text-lg text-gray-500 mb-6">
+  (Modern cross-platform package management)
+</div>
+
+<div class="text-lg">
+  ✅ Reproducible environments<br>
+  ✅ Lock files for exact versions<br>
+  ✅ Cross-platform compatibility<br>
+  ✅ Fast dependency resolution
+</div>
+
+<!--
+Pixi is a modern package manager that's gaining popularity:
+
+What is Pixi?
+- Cross-platform package manager built in Rust
+- Uses conda-forge packages but with better dependency resolution
+- Creates reproducible environments with lock files
+- Faster than traditional conda for many operations
+
+Installation commands:
+```bash
+# Initialize new project
+pixi init my-pymc-project
+cd my-pymc-project
+
+# Add PyMC and dependencies
+pixi add pymc
+
+# Optional: Add development dependencies
+pixi add jupyter notebook --feature dev
+
+# Run commands in the environment
+pixi run python script.py
+pixi run jupyter lab
+```
+
+Why choose Pixi?
+- Lock files ensure exact reproducibility
+- Faster dependency resolution than conda
+- Better cross-platform support (Windows, macOS, Linux)
+- Modern tooling with clear error messages
+- Integrates well with CI/CD pipelines
+
+Project structure:
+- pixi.toml: project configuration and dependencies
+- pixi.lock: exact versions for reproducibility
+- .pixi/: environment directory (auto-generated)
+
+When to use Pixi:
+- New projects where reproducibility is critical
+- Collaborative projects with multiple developers
+- CI/CD environments
+- When you want faster package management
+
+Pixi is especially good for data science projects that need to be shared and reproduced exactly.
+-->
+
+---
 layout: top-title-two-cols
 color: blue-light
 align: c-lt-lt
@@ -366,9 +550,9 @@ columns: is-6
 <div class="bg-blue-100 p-6 rounded-lg">
   <div class="text-xl font-bold text-blue-800 mb-2">⚡ JAX + NumPyro</div>
   <div class="text-blue-700 text-sm">
-    • GPU/TPU acceleration<br>
+    • GPU/TPU/CPU acceleration<br>
     • <code>conda install numpyro</code><br>
-    • Some limitations
+    • JIT compilation, some limitations
   </div>
 </div>
 
@@ -379,7 +563,7 @@ columns: is-6
   <div class="text-purple-700 text-sm">
     • Rust + Numba performance<br>
     • <code>conda install -c conda-forge nutpie</code><br>
-    • CPU-optimized NUTS
+    • Fast CPU NUTS, GPU with JAX
   </div>
 </div>
 
@@ -403,16 +587,16 @@ PyMC supports multiple computational backends and sampling libraries:
    - Best choice for learning and most applications
 
 2. JAX Backend with NumPyro:
-   - GPU and TPU acceleration
+   - GPU, TPU, and CPU acceleration
    - Install: conda install numpyro
    - 5-10x faster for large models
    - JIT compilation for speed
-   - Some PyMC features may have limitations
+   - Limitations: missing data handling, boolean masks, discrete variables, some PyTensor operations
 
-3. Nutpie (Fast CPU sampling):
+3. Nutpie (Fast sampling):
    - Rust-based NUTS implementation with Numba
    - Install: conda install -c conda-forge nutpie
-   - Optimized for CPU performance
+   - Fast CPU sampling, GPU support via JAX backend
    - Faster than default PyTensor for many models
 
 4. BlackJAX (Advanced JAX samplers):
@@ -453,9 +637,15 @@ print(f"Test sample: {pm.draw(x, draws=3)}")
   🎉 If this runs, you're ready!
 </div>
 
-<StickyNote color="green" class="mt-4">
-💡 <strong>Pro Tip:</strong> The first run might be slow due to compilation, but subsequent runs will be much faster!
-</StickyNote>
+<div v-click class="mt-6">
+<p class="text-lg mb-2 text-gray-600">Expected Output:</p>
+
+```text
+PyMC version: 5.25.0
+ArviZ version: 0.22.0
+Test sample: [ 0.75921629  1.11139729 -0.32886635]
+```
+</div>
 
 <!--
 Let's verify your installation works correctly.
@@ -889,7 +1079,7 @@ columns: is-6
 - ✅ Prepare data first
   - Do pandas ops outside the model, then use `.values`
 - 🔁 Updatable data
-  - Use `pm.MutableData()` for data that will change
+  - Use `pm.Data()` objects for data that will change
 - 🧩 Missing data
   - Prefer tensor operations like `pt.where()` over boolean masks
 
@@ -903,7 +1093,7 @@ with pm.Model():
 # ✅ Correct: prepare data first
 means = df.groupby('category').mean().values
 with pm.Model():
-    data = pm.MutableData("data", means)
+    data = pm.Data("data", means)
 ```
 
 <!--
@@ -918,7 +1108,7 @@ The Core Problem:
 The Solution Pattern:
 1. Complete ALL pandas operations outside the model context
 2. Convert results to numpy arrays (.values)
-3. Use pm.MutableData() for data that needs updating
+3. Use pm.Data() for data that needs updating
 4. Enter the model context only with prepared tensors
 
 Missing Data Handling:
@@ -1156,7 +1346,7 @@ n_deaths = np.array([0, 1, 3, 5])
 
 with pm.Model() as bioassay_model:
     # Updatable input
-    dose = pm.MutableData('dose', dose)
+    dose = pm.Data('dose', dose)
 
     # Priors for intercept and slope
     alpha = pm.Normal('alpha', mu=0, sigma=2.5)
@@ -1311,15 +1501,36 @@ align: c
 
 ```python
 with bioassay_model:
-    trace = pm.sample(2000, tune=1000, chains=4, random_seed=42)
-
-# PyMC automatically:
-# ✓ Chose NUTS sampler    ✓ Tuned parameters
-# ✓ Ran 4 parallel chains ✓ Checked convergence
+    trace = pm.sample()
 ```
 
 <div class="text-2xl mt-4 text-center">
-  ⚡ Modern MCMC is (mostly) automatic! ⚡
+  ⚡ MCMC sampling is (mostly) automatic! ⚡
+</div>
+
+<div v-click class="mt-6">
+<p class="text-lg mb-2 text-gray-600">Terminal Output:</p>
+
+```text
+Auto-assigning NUTS sampler...
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [alpha, beta]
+
+Sampling 4 chains for 1_000 tune and 2_000 draw iterations (4_000 tuning and 8_000 posterior samples) took 12 seconds.
+The number of effective samples is smaller than 400 for some parameters.
+```
+
+<div class="mt-4 text-lg">
+<strong>PyMC automatically:</strong>
+<div class="grid grid-cols-2 gap-4 mt-2">
+  <div>✓ Chose NUTS sampler</div>
+  <div>✓ Tuned sampler hyperparameters</div>
+  <div>✓ Ran 4 parallel chains</div>
+  <div>✓ Monitored for sampling issues</div>
+</div>
+</div>
+
 </div>
 
 <!--
@@ -1363,6 +1574,10 @@ align: c
 
 :: content ::
 
+```python
+az.plot_trace(trace, var_names=['alpha', 'beta'])
+```
+
 <img src="/plots/bioassay/trace_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
@@ -1404,6 +1619,10 @@ align: c
 
 :: content ::
 
+```python
+az.plot_posterior(trace, var_names=['alpha', 'beta'])
+```
+
 <img src="/plots/bioassay/posterior_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
@@ -1444,6 +1663,10 @@ align: c
 # Parameter Relationships
 
 :: content ::
+
+```python
+az.plot_pair(trace, var_names=['alpha', 'beta'], kind='scatter')
+```
 
 <img src="/plots/bioassay/pair_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
@@ -1490,11 +1713,10 @@ align: c
 az.summary(trace, var_names=['alpha', 'beta'])
 ```
 
-<div class="text-sm font-mono bg-gray-100 p-4 rounded mt-4">
-        mean     sd  hdi_3%  hdi_97%  mcse_mean  mcse_sd  ess_bulk  ess_tail  r_hat<br>
-alpha  0.241  0.634  -0.985    1.430      0.010    0.008    4266.0    4089.0    1.0<br>
-beta   4.034  1.447   1.532    6.869      0.022    0.018    5094.0    4724.0    1.0
-</div>
+| Parameter | mean  | sd    | hdi_3% | hdi_97% | mcse_mean | mcse_sd | ess_bulk | ess_tail | r_hat |
+|-----------|-------|-------|--------|---------|-----------|---------|----------|----------|-------|
+| alpha     | 0.241 | 0.634 | -0.985 | 1.430   | 0.010     | 0.008   | 4266.0   | 4089.0   | 1.0   |
+| beta      | 4.034 | 1.447 | 1.532  | 6.869   | 0.022     | 0.018   | 5094.0   | 4724.0   | 1.0   |
 
 <div class="mt-6 text-center">
   <div class="text-2xl">🎯 Excellent diagnostics!</div>
@@ -1540,6 +1762,11 @@ align: c
 
 :: content ::
 
+```python
+with bioassay_model:
+    posterior_predictive = pm.sample_posterior_predictive(trace)
+```
+
 <img src="/plots/bioassay/posterior_predictive.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
 
 <!--
@@ -1574,21 +1801,6 @@ If we saw systematic deviations, we'd need to consider:
 - Individual animal variability (hierarchical modeling)
 -->
 
----
-layout: top-title
-align: c
----
-
-:: title ::
-
-# Predictive Checks: Joint vs Marginals
-
-:: content ::
-
-- Use pm.sample_posterior_predictive(trace): draws jointly from posterior
-- Don’t simulate from independent parameter marginals (loses correlations)
-- ArviZ plots assume joint InferenceData draws
-
 
 ---
 layout: top-title-two-cols
@@ -1616,7 +1828,7 @@ pred_mortality = posterior_pred.posterior_predictive['deaths']
 
 :: right ::
 
-- Define new inputs with `pm.MutableData`
+- Define new inputs with `pm.Data`
 - Use `pm.sample_posterior_predictive`
 - Summarize predictive distributions
 
@@ -2025,21 +2237,21 @@ align: c
   <div>
     <div class="text-xl mb-3">🔍 Diagnostic Steps</div>
     <ol class="text-sm space-y-2">
-      <li>1. Check trace plots</li>
-      <li>2. Look at R-hat values</li>
-      <li>3. Check effective sample size</li>
-      <li>4. Count divergences</li>
-      <li>5. Do posterior predictive checks</li>
+      <li>Check trace plots</li>
+      <li>Look at R-hat values</li>
+      <li>Check effective sample size</li>
+      <li>Count divergences</li>
+      <li>Do posterior predictive checks</li>
     </ol>
   </div>
   <div>
     <div class="text-xl mb-3">🛠️ Fix Strategy</div>
     <ol class="text-sm space-y-2">
-      <li>1. Try sampler tuning first</li>
-      <li>2. Examine prior predictive samples</li>
-      <li>3. Simplify the model</li>
-      <li>4. Reparameterize if needed</li>
-      <li>5. Ask for help on discourse!</li>
+      <li>Try sampler tuning first</li>
+      <li>Examine prior predictive samples</li>
+      <li>Simplify the model</li>
+      <li>Reparameterize if needed</li>
+      <li>Ask for help on discourse!</li>
     </ol>
   </div>
 </div>
@@ -2366,7 +2578,7 @@ layout: center
     <div class="text-2xl mb-4">💬 Community</div>
     <ul class="text-lg space-y-2">
       <li>🗣️ <strong>discourse.pymc.io</strong></li>
-      <li>🐦 @pymc_devs</li>
+      <li>🦋 @pymc-devs.bsky.social</li>
       <li>💻 GitHub discussions</li>
       <li>🎪 PyData conferences</li>
     </ul>
@@ -2414,7 +2626,7 @@ Discourse Forum (discourse.pymc.io):
 - Beginner-friendly atmosphere
 
 Social Media:
-- @pymc_devs on Twitter for updates
+- @pymc-devs.bsky.social on Bluesky for updates
 - LinkedIn PyMC community
 - Reddit r/BayesianStatistics
 
@@ -2597,184 +2809,117 @@ Understanding these trends will help you stay current and make good decisions ab
 layout: center
 ---
 
-# 🤖 AI Integration
+# 🚀 Performance & Backends
 
 <div class="grid grid-cols-2 gap-12 mt-8">
   <div class="text-center">
-    <div class="text-5xl mb-4">🧠</div>
-    <div class="text-2xl">LLM-Assisted Modeling</div>
-    <div class="text-lg mt-2 text-gray-600">Natural language → PyMC code</div>
+    <div class="text-5xl mb-4">⚡</div>
+    <div class="text-2xl">JAX Backend</div>
+    <div class="text-lg mt-2 text-gray-600">GPU acceleration & JIT compilation</div>
   </div>
   <div class="text-center">
-    <div class="text-5xl mb-4">⚡</div>
-    <div class="text-2xl">Neural Approximations</div>
-    <div class="text-lg mt-2 text-gray-600">Faster inference with neural networks</div>
+    <div class="text-5xl mb-4">🔧</div>
+    <div class="text-2xl">Alternative Samplers</div>
+    <div class="text-lg mt-2 text-gray-600">nutpie, BlackJAX integration</div>
   </div>
 </div>
 
 <div class="mt-8 text-center text-lg text-gray-500">
-  "Build a hierarchical model for customer churn prediction"
+  Significant performance improvements for large-scale models
 </div>
 
 <!--
-AI is transforming how we build and use Bayesian models:
+PyMC is actively improving performance and expanding backend options:
 
-LLM-Assisted Modeling:
-- Natural language descriptions → PyMC code
-- Automatic model specification from data descriptions
-- Interactive debugging and model improvement
-- Democratizing Bayesian modeling for domain experts
+JAX Backend:
+- GPU and TPU acceleration for large models
+- JIT compilation for significant speedups
+- Already available and actively developed
+- Particularly beneficial for complex hierarchical models
+- Apple Silicon GPU support through JAX
 
-Example workflow:
-User: "I have sales data by region and want to account for seasonal effects"
-AI: Generates hierarchical model with seasonal components in PyMC
+Alternative Samplers:
+- nutpie: Rust-based NUTS implementation with numba compilation
+- BlackJAX integration for advanced sampling algorithms
+- Fisher HMC for challenging geometries
+- Specialized samplers for different model types
 
-Neural Approximations:
-- Neural networks to approximate posterior distributions
-- Much faster than MCMC for some problems
-- Normalizing flows for complex posterior shapes
-- Variational autoencoders for model comparison
+Current Status:
+- JAX backend is production-ready for many use cases
+- nutpie provides significant speedups for certain models
+- Active development on sampler ecosystem
+- Focus on making PyMC faster and more scalable
 
-Current Reality:
-- Early stage but rapidly developing
-- Some tools already available (GitHub Copilot helps with PyMC code)
-- Integration with ChatGPT/Claude for model consultation
-- Research active in neural posterior estimation
+Performance Improvements:
+- 5-10x speedups already achievable with JAX
+- Better scaling to larger datasets
+- More efficient memory usage
+- Improved convergence diagnostics
 
-Future Vision:
-- Conversational model building
-- Automatic model criticism and improvement
-- AI-assisted prior elicitation
-- Seamless integration of domain knowledge
-
-This could make Bayesian modeling accessible to many more scientists and analysts who understand their domain but not the technical details of MCMC.
+These developments make PyMC competitive for industrial-scale applications while maintaining its ease of use.
 -->
 
 ---
 layout: center
 ---
 
-# ⚡ Performance Revolution
+# 🌟 Ecosystem Growth
 
 <div class="grid grid-cols-3 gap-6 mt-8">
   <div class="text-center">
-    <div class="text-4xl mb-2">🚀</div>
-    <div class="text-xl mb-2">JAX Backend</div>
-    <div class="text-sm text-gray-600">GPU acceleration</div>
+    <div class="text-4xl mb-2">🔧</div>
+    <div class="text-xl mb-2">Domain Tools</div>
+    <div class="text-sm text-gray-600">PyMC-Marketing, CausalPy</div>
   </div>
   <div class="text-center">
-    <div class="text-4xl mb-2">🔥</div>
-    <div class="text-xl mb-2">Compilation</div>
-    <div class="text-sm text-gray-600">JIT optimization</div>
+    <div class="text-4xl mb-2">🔌/div>
+    <div class="text-xl mb-2">Integrations</div>
+    <div class="text-sm text-gray-600">Bambi, scikit-learn</div>
   </div>
   <div class="text-center">
-    <div class="text-4xl mb-2">📈</div>
-    <div class="text-xl mb-2">Scalability</div>
-    <div class="text-sm text-gray-600">Larger datasets</div>
+    <div class="text-4xl mb-2">📚</div>
+    <div class="text-xl mb-2">Education</div>
+    <div class="text-sm text-gray-600">Books, tutorials, courses</div>
   </div>
 </div>
 
 <div class="mt-8 text-center">
-  <div class="text-2xl">100x speedups possible for large models</div>
+  <div class="text-2xl">Growing community and specialized applications</div>
 </div>
 
 <!--
-Performance improvements are making Bayesian modeling feasible for much larger problems:
+The PyMC ecosystem is expanding rapidly with specialized tools and integrations:
 
-JAX Backend:
-- GPU/TPU acceleration for massive models
-- Automatic differentiation optimized for modern hardware
-- Vectorized operations across multiple devices
-- Already 5-10x faster for many models
+Domain-Specific Tools:
+- PyMC-Marketing: Marketing mix modeling, customer lifetime value
+- CausalPy: Causal inference in quasi-experimental settings
+- Exoplanet: Astronomical time series and transit modeling
+- BEAT: Bayesian earthquake analysis
 
-JIT Compilation:
-- XLA compiler optimizes entire model graphs
-- Eliminates Python overhead
-- Aggressive optimization for repeated operations
-- Cold start penalty but then much faster
+High-Level Interfaces:
+- Bambi: R-style formula interface for statistical modeling
+- PyMC-Learn: Scikit-learn compatible API
+- Calibr8: Detailed observation models for complex likelihoods
 
-Scalability Improvements:
-- Handle millions of observations
-- Thousands of parameters in hierarchical models
-- Real-time inference for streaming data
-- Distributed computation across clusters
+Educational Resources:
+- Multiple books using PyMC (Bayesian Analysis with Python, etc.)
+- PyMCon conference and community events
+- Comprehensive documentation and example gallery
+- Active Discourse forum with expert support
 
-Current Status:
-- JAX backend already available and improving
-- Some limitations vs NumPy backend
-- Research into specialized hardware (TPUs)
-- Integration with cloud computing platforms
+Integration Ecosystem:
+- ArviZ for visualization and diagnostics
+- PyTensor for computational backend
+- NumFOCUS fiscal sponsorship
+- Professional consulting through PyMC Labs
 
-Impact:
-- Previously impossible models now feasible
-- Real-time decision making with Bayesian uncertainty
-- Large-scale A/B testing and experimentation
-- Industrial applications with big data
+Community Growth:
+- 9.2k GitHub stars and growing
+- Active contributor community (450+ contributors)
+- Industry adoption in finance, marketing, science
+- Strong academic and research usage
 
-This performance revolution is making Bayesian methods competitive with classical ML for large-scale applications.
--->
-
----
-layout: center
----
-
-# 🌍 Growing Applications
-
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div>
-    <div class="text-2xl mb-4 text-purple-400">🔬 Science</div>
-    <ul class="text-sm space-y-1">
-      <li>Climate modeling</li>
-      <li>Genomics & personalized medicine</li>
-      <li>Astronomy & cosmology</li>
-      <li>Social sciences</li>
-    </ul>
-  </div>
-  <div>
-    <div class="text-2xl mb-4 text-blue-400">🏢 Industry</div>
-    <ul class="text-sm space-y-1">
-      <li>Supply chain optimization</li>
-      <li>Financial risk modeling</li>
-      <li>Marketing mix modeling</li>
-      <li>Quality control</li>
-    </ul>
-  </div>
-</div>
-
-<div class="mt-8 text-center">
-  <div class="text-lg text-gray-600">
-    Uncertainty quantification becoming essential everywhere
-  </div>
-</div>
-
-<!--
-Bayesian methods are expanding into new domains:
-
-Scientific Applications:
-- Climate modeling: quantifying uncertainty in climate projections
-- Genomics: personalized medicine with individual-level predictions
-- Astronomy: discovering exoplanets and dark matter
-- Social sciences: causal inference and policy evaluation
-
-Industrial Applications:
-- Supply chain: robust optimization under uncertainty
-- Finance: regulatory compliance requires uncertainty quantification
-- Marketing: attribution and media mix optimization
-- Manufacturing: quality control and predictive maintenance
-
-Why the Growth?
-- Regulatory requirements for uncertainty quantification
-- AI safety concerns driving need for calibrated confidence
-- Better tools making Bayesian methods more accessible
-- Recognition that point estimates are insufficient
-
-Market Trends:
-- Consulting firms building Bayesian practices
-- Software companies integrating uncertainty quantification
-- Academic programs emphasizing Bayesian statistics
-- Industry standards requiring probabilistic forecasts
-
-The future is probabilistic - organizations that embrace uncertainty quantification will have competitive advantages in decision-making under uncertainty.
+This ecosystem growth makes PyMC not just a tool, but a complete platform for Bayesian modeling across domains.
 -->
 
 ---
@@ -2806,7 +2951,7 @@ layout: center
 
 <div class="mt-8 text-center">
   <div class="text-2xl text-orange-500">
-    🚀 Join us in building the future of data science!
+    🚀 Help us make PyMC even better!
   </div>
 </div>
 
@@ -2866,9 +3011,7 @@ class: text-center
 
 # Questions? 🤔
 
-<div class="text-2xl mt-8 mb-12">
-  Thank you for joining this PyMC journey!
-</div>
+<br>
 
 <div class="grid grid-cols-3 gap-8 text-lg">
   <div>
@@ -2880,13 +3023,13 @@ class: text-center
     <div>pymc.io</div>
   </div>
   <div>
-    <div class="text-3xl mb-2">🐦</div>
-    <div>@pymc_devs</div>
+    <div class="text-3xl mb-2">🦋</div>
+    <div>@pymc-devs.bsky.social</div>
   </div>
 </div>
 
-<div class="mt-12 text-gray-500">
-  Slides: github.com/fonnesbeck/du_pymc_tutorial
+<div class="text-2xl mt-8 mb-12">
+  Thank you for your interest in PyMC!
 </div>
 
 <!--
@@ -2917,7 +3060,7 @@ Next steps:
 Resources for continued learning:
 - discourse.pymc.io: get help and see discussions
 - pymc.io: official documentation and tutorials
-- @pymc_devs: stay updated on new developments
+- @pymc-devs.bsky.social: stay updated on new developments
 
 Remember: every expert was once a beginner. Don't hesitate to ask questions and engage with the community!
 
