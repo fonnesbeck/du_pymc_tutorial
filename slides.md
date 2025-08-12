@@ -1,8 +1,8 @@
 ---
 theme: neversink
-title: Getting Started with PyMC v5
+title: Getting Started with PyMC
 info: |
-  ## Getting Started with PyMC v5
+  ## Getting Started with PyMC
   Data Umbrella Tutorial
 
   A 1-hour introduction to probabilistic programming and Bayesian modeling with PyMC.
@@ -26,7 +26,11 @@ themeConfig:
   text: "#F3EFF5"
 ---
 
-# Getting Started with PyMC v5
+<div class="flex justify-center mb-6">
+  <img src="/PyMC.png" alt="PyMC" class="h-20">
+</div>
+
+# Getting Started with PyMC
 
 by **Christopher Fonnesbeck** • *PyMC Labs*
 
@@ -66,13 +70,13 @@ align: c
   </div>
   <div>
     <div class="text-4xl mb-3">🔧</div>
-    <div class="text-xl mb-2">Practical Skills</div>
-    <div class="text-sm text-gray-600">Building and diagnosing real models</div>
+    <div class="text-xl mb-2">Hands-on Modeling</div>
+    <div class="text-sm text-gray-600">Building, diagnosing, and analyzing statistical models</div>
   </div>
   <div>
-    <div class="text-4xl mb-3">📊</div>
-    <div class="text-xl mb-2">Data Analysis</div>
-    <div class="text-sm text-gray-600">Working with real-world examples</div>
+    <div class="text-4xl mb-3">🌐</div>
+    <div class="text-xl mb-2">Ecosystem Overview</div>
+    <div class="text-sm text-gray-600">Tools, resources, and community connections</div>
   </div>
   <div>
     <div class="text-4xl mb-3">🚀</div>
@@ -152,7 +156,7 @@ color: sky-light
 
 - Point estimates
 - p-values
-- Confidence intervals*
+- Confidence intervals
 - Null hypothesis testing
 
 :: right ::
@@ -171,7 +175,7 @@ Traditional Statistics:
 - Gives you point estimates with error bars
 - p-values are confusing (what's the probability that the null hypothesis is true? NOT what p-values tell you!)
 - Confidence intervals have a weird interpretation: "If we repeated this study 100 times, 95% of the confidence intervals would contain the true value"
-- Focuses on rejecting null hypotheses rather than quantifying effects
+- Focuses on rejecting null hypotheses rather than quantifying effects (p-values)
 
 Bayesian Statistics:
 - Gives you the full distribution of possible parameter values
@@ -221,8 +225,8 @@ align: c
     <div class="text-lg font-semibold">Social Sciences</div>
   </div>
   <div class="text-center">
-    <div class="text-3xl mb-2 text-red-400">🏭</div>
-    <div class="text-lg font-semibold">Manufacturing</div>
+    <div class="text-3xl mb-2 text-red-400">⚾</div>
+    <div class="text-lg font-semibold">Sports Analytics</div>
   </div>
   <div class="text-center">
     <div class="text-3xl mb-2 text-teal-400">🌍</div>
@@ -283,12 +287,12 @@ Psychology & Social Sciences:
 - Political polling and election forecasting
 - Economic behavior modeling
 
-Manufacturing:
-- Quality control with statistical process monitoring
-- Predictive maintenance for equipment
-- Supply chain optimization under uncertainty
-- Reliability analysis and failure prediction
-- Process optimization with noisy measurements
+Sports Analytics:
+- Player performance modeling and evaluation
+- Game outcome prediction and betting odds
+- Team strategy optimization under uncertainty
+- Injury risk assessment and prevention
+- Fan engagement and attendance forecasting
 
 Ecology & Climate:
 - Climate change modeling and projections
@@ -633,9 +637,7 @@ x = pm.Normal.dist(mu=0, sigma=1)
 print(f"Test sample: {pm.draw(x, draws=3)}")
 ```
 
-<div v-click class="text-2xl mt-6 text-green-500">
   🎉 If this runs, you're ready!
-</div>
 
 <div v-click class="mt-6">
 <p class="text-lg mb-2 text-gray-600">Expected Output:</p>
@@ -675,66 +677,6 @@ If sampling is very slow:
 - Subsequent runs should be much faster
 -->
 
----
-layout: top-title
-align: c
----
-
-:: title ::
-
-# 🛠️ Development Setup
-
-:: content ::
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-  <div class="bg-blue-50 p-6 rounded-lg">
-    <div class="text-2xl mb-2">📓 Jupyter Notebooks</div>
-    <div class="text-lg mb-3 text-blue-900">Recommended for learning</div>
-    <div class="text-sm space-y-1.5 text-blue-800">
-      <div>✅ Interactive exploration</div>
-      <div>✅ Immediate plot display</div>
-      <div>✅ Great for tutorials</div>
-    </div>
-  </div>
-  <div class="bg-green-50 p-6 rounded-lg">
-    <div class="text-2xl mb-2">🆚 VS Code + Jupyter</div>
-    <div class="text-lg mb-3 text-green-900">Best of both worlds</div>
-    <div class="text-sm space-y-1.5 text-green-800">
-      <div>✅ Code completion</div>
-      <div>✅ Git integration</div>
-      <div>✅ Notebook support</div>
-    </div>
-  </div>
-</div>
-
-<!--
-For Bayesian modeling, your development environment matters:
-
-Jupyter Notebooks:
-- Perfect for exploratory data analysis
-- Interactive plots work seamlessly
-- Easy to iterate on models
-- Great for sharing results
-- ArviZ plots display beautifully
-- Recommended for learning PyMC
-
-VS Code:
-- Better for production code
-- Excellent debugging capabilities
-- Smart code completion for PyMC
-- Integrated version control
-- Can run notebooks natively
-- Better for larger projects
-
-Other good options:
-- PyCharm: Great IDE features, good for complex projects
-- Google Colab: Free GPU access, good for large models
-- Spyder: Popular in scientific computing
-
-For this tutorial, either Jupyter or VS Code will work great. Choose what you're most comfortable with.
-
-Pro tip: Start with Jupyter for exploration, then move to VS Code when you want to turn your analysis into reusable code.
--->
 
 ---
 layout: top-title
@@ -872,6 +814,77 @@ align: c
 
 :: title ::
 
+# Bayes' Theorem
+
+:: content ::
+
+$$
+\Huge
+\underbrace{P(\theta \mid \text{data})}_{\color{teal}{\small \text{Posterior}}} =
+\frac{\overbrace{P(\text{data} \mid \theta)}^{\color{teal}{\small \text{Likelihood}}}\;\overbrace{P(\theta)}^{\color{teal}{\small \text{Prior}}}}{\underbrace{P(\text{data})}_{\color{teal}{\small \text{Evidence / Marginal\;Likelihood}}}}
+$$
+
+
+
+---
+layout: top-title
+color: amber-light
+align: c
+---
+
+:: title ::
+
+# The Computational Challenge
+
+:: content ::
+
+$$
+\Huge
+P(\text{data}) = \int P(\text{data}\mid\theta)\,P(\theta)\,d\theta
+$$
+
+<div class="text-7xl mt-8 text-center">😭</div>
+
+<!-- Notes:
+- The denominator is the marginal likelihood (evidence)
+- High-dimensional parameter spaces make the integral intractable for real models
+- No closed-form in general; brute-force numerical integration is infeasible
+- Inspired by basic_bayes_slides styling (visual-first, minimal on-screen text)
+-->
+
+---
+layout: top-title
+color: amber-light
+align: c
+---
+
+:: title ::
+
+# MCMC to the Rescue
+
+:: content ::
+
+$$
+\Huge
+P(\theta\mid\text{data}) \propto P(\text{data}\mid\theta)\,P(\theta)
+$$
+
+<img src="/hmc.gif" class="w-full max-w-3xl mx-auto mt-8" style="max-height: 46vh; object-fit: contain;">
+
+<!-- Notes:
+- MCMC samples from the posterior without computing P(data)
+- Posterior expectations, intervals, predictions computed from samples
+- PyMC’s NUTS is efficient for complex models
+- Keep on-screen text minimal; focus on the proportionality equation and animation
+-->
+---
+layout: top-title
+color: amber-light
+align: c
+---
+
+:: title ::
+
 # The Model Container
 
 :: content ::
@@ -912,33 +925,50 @@ The model context is where the magic happens - PyMC builds a directed acyclic gr
 -->
 
 ---
-layout: top-title
-align: c
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
 ---
 
 :: title ::
 
 # Random Variables & Distributions
 
-:: content ::
-
-<div class="mt-4">
+:: left ::
 
 ```python
-# Unobserved (parameters to estimate)
-mu = pm.Normal("mu", mu=0, sigma=10)
-sigma = pm.HalfNormal("sigma", sigma=1)
+with pm.Model() as model:
+    # Unobserved (parameters to estimate)
+    mu = pm.Normal("mu", mu=0, sigma=10)
+    sigma = pm.HalfNormal("sigma", sigma=1)
 
-# Deterministic transformations
-scaled_mu = pm.Deterministic("scaled_mu", mu * 2)
+    # Deterministic transformations
+    scaled_mu = pm.Deterministic("scaled_mu", mu * 2)
 
-# Observed (your data)
-y = pm.Normal("y", mu=mu, sigma=sigma, observed=data)
+    # Observed (your data)
+    y = pm.Normal("y", mu=mu, sigma=sigma, observed=data)
 ```
 
+:: right ::
+
+```python
+# Visualize the model structure
+pm.model_to_graphviz(model)
+```
+
+<div class="mt-4">
+  <img src="/model_graph.png" alt="Model Graph" class="mx-auto" style="max-height: 55vh; width: auto;">
 </div>
 
+
 <!--
+This slide demonstrates both the code structure and visual representation of PyMC models:
+
+Left Side - Proper Model Context:
+- All random variables must be defined within a `with pm.Model() as model:` context
+- This allows PyMC to track variable relationships and build the computational graph
+- The context manager ensures proper model organization and automatic dependency tracking
+
 PyMC has three main types of variables:
 
 1. Unobserved Random Variables (Parameters):
@@ -958,6 +988,12 @@ PyMC has three main types of variables:
    - Connected to parameters through the likelihood
    - Example: y ~ Normal(mu, sigma) where y is your observed data
 
+Right Side - Graphical Model Visualization:
+- pm.model_to_graphviz(model) creates a directed acyclic graph (DAG)
+- Shows the probabilistic relationships between variables
+- Helps visualize model structure and dependencies
+- Useful for model validation and communication
+
 The key insight: you're building a generative model. You're saying "this is how I think the data was generated" and then inverting that process to learn about the parameters.
 -->
 
@@ -973,7 +1009,7 @@ align: c
 
 :: content ::
 
-<img src="/plots/distributions/distribution_zoo.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
+<img src="/plots/distributions/distribution_zoo.png" class="mx-auto" style="max-height: 55vh; width: auto; object-fit: contain;">
 
 <!--
 PyMC provides a comprehensive set of probability distributions:
@@ -1129,55 +1165,6 @@ model.py -> pure PyMC tensor operations
 This separation prevents most data handling errors.
 -->
 
----
-layout: top-title
-align: c
----
-
-:: title ::
-
-# The Bayesian Recipe
-
-:: content ::
-
-<div class="text-4xl mb-6">
-  Prior × Likelihood = Posterior
-</div>
-
-```python
-with pm.Model() as model:
-    # Prior: What we believe before seeing data
-    mu = pm.Normal("mu", mu=0, sigma=10)
-
-    # Likelihood: How we think data was generated
-    y = pm.Normal("y", mu=mu, sigma=1, observed=data)
-
-    # Posterior: Updated beliefs (computed by MCMC)
-```
-
-<!--
-This is the heart of Bayesian statistics:
-
-Prior:
-- Your beliefs before seeing the data
-- Can be informative (based on domain knowledge) or uninformative (letting data dominate)
-- Example: mu ~ Normal(0, 10) says we think mu is probably near 0
-
-Likelihood:
-- Your model of how the data was generated
-- Given parameters, what's the probability of observing your data?
-- Example: y ~ Normal(mu, 1) says each observation comes from a normal distribution
-
-Posterior:
-- Your updated beliefs after seeing the data
-- Combines prior knowledge with information from data
-- This is what MCMC sampling gives you
-- Automatically balances prior and likelihood based on data quality
-
-Bayes' theorem: P(parameters | data) ∝ P(data | parameters) × P(parameters)
-
-The beauty: everything is probabilistic, so you get full uncertainty quantification for free.
--->
 
 ---
 layout: top-title-two-cols
@@ -1286,9 +1273,9 @@ align: c
   <div>
     <div class="text-2xl mb-2">The Data</div>
     <div class="text-lg mt-3 space-y-1">
-      <div><strong>Dose:</strong> [-0.86, -0.3, -0.05, 0.73]</div>
-      <div><strong>Animals:</strong> [5, 5, 5, 5]</div>
-      <div><strong>Deaths:</strong> [0, 1, 3, 5]</div>
+      <div><strong>Dose:</strong> <code>[-0.86, -0.3, -0.05, 0.73]</code></div>
+      <div><strong>Animals:</strong> <code>[5, 5, 5, 5]</code></div>
+      <div><strong>Deaths:</strong> <code>[0, 1, 3, 5]</code></div>
     </div>
   </div>
 </div>
@@ -1578,7 +1565,7 @@ align: c
 az.plot_trace(trace, var_names=['alpha', 'beta'])
 ```
 
-<img src="/plots/bioassay/trace_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
+<img src="/plots/bioassay/trace_plot.png" class="w-full max-w-3xl mx-auto" style="max-height: 50vh; object-fit: contain;">
 
 <!--
 Trace plots are your first check for sampling problems:
@@ -1668,7 +1655,7 @@ align: c
 az.plot_pair(trace, var_names=['alpha', 'beta'], kind='scatter')
 ```
 
-<img src="/plots/bioassay/pair_plot.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
+<img src="/plots/bioassay/pair_plot.png" class="w-full max-w-3xl mx-auto" style="max-height: 50vh; object-fit: contain;">
 
 <!--
 The pair plot shows how parameters relate to each other:
@@ -1767,7 +1754,7 @@ with bioassay_model:
     posterior_predictive = pm.sample_posterior_predictive(trace)
 ```
 
-<img src="/plots/bioassay/posterior_predictive.png" class="w-full max-w-4xl mx-auto" style="max-height: 65vh; object-fit: contain;">
+<img src="/plots/bioassay/posterior_predictive.png" class="w-full max-w-3xl mx-auto" style="max-height: 50vh; object-fit: contain;">
 
 <!--
 The posterior predictive check validates our model against reality:
@@ -1803,16 +1790,8 @@ If we saw systematic deviations, we'd need to consider:
 
 
 ---
-layout: top-title-two-cols
-align: c-lt-lt
-columns: is-6
----
-
-:: title ::
 
 # Making Predictions
-
-:: left ::
 
 ```python
 # Predict mortality at new doses
@@ -1826,15 +1805,28 @@ with bioassay_model:
 pred_mortality = posterior_pred.posterior_predictive['deaths']
 ```
 
-:: right ::
+::: v-click
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4">
+  <div>
+    <img src="/plots/bioassay/predictions.png" class="w-full max-w-3xl mx-auto" style="max-height: 55vh; object-fit: contain;">
+  </div>
+  <div>
 
-- Define new inputs with `pm.Data`
-- Use `pm.sample_posterior_predictive`
-- Summarize predictive distributions
+```text
+Dose  p(death) mean [94% HDI]
+-1.00 0.045 [0.001, 0.196]
++0.00 0.554 [0.283, 0.816]
++1.00 0.962 [0.801, 1.000]
 
-<div class="text-2xl mt-4">
-  🔮 Full uncertainty quantification for free!
+Expected deaths out of 5 [94% HDI]
+-1.00 0.22 [0.01, 0.98]
++0.00 2.77 [1.41, 4.08]
++1.00 4.81 [4.00, 5.00]
+```
+
+  </div>
 </div>
+:::
 
 
 ---
@@ -2495,49 +2487,50 @@ columns: is-6
 
 :: title ::
 
-# PyMC-Experimental: Cutting Edge
+# PyMC-Extras: Cutting Edge
 
 :: left ::
 
 <div class="text-2xl mb-3">🧪 New Methods</div>
 <ul class="text-lg space-y-2">
-  <li>Variational inference</li>
-  <li>Gaussian processes</li>
-  <li>State space models</li>
-  <li>Causal inference</li>
+  <li>Pathfinder and Laplace approximations</li>
+  <li>Sequential Monte Carlo (SMC)</li>
+  <li>State space modeling toolkit (filters, models)</li>
+  <li>GP latent approximations</li>
 </ul>
 
 :: right ::
 
 <div class="text-2xl mb-3">🚀 Experimental Features</div>
 <ul class="text-lg space-y-2">
-  <li>New samplers</li>
-  <li>Advanced diagnostics</li>
-  <li>Model comparison</li>
-  <li>Optimization tools</li>
+  <li>Extra distributions and transforms</li>
+  <li>Model builder and linear-model helpers</li>
+  <li>Preprocessing and utilities</li>
+  <li>Experimental inference APIs</li>
 </ul>
 
 <div class="mt-6 text-center text-lg text-gray-600">
-  💡 Features graduate to main PyMC when stable
+  💡 Some features matriculate to PyMC when stable
 </div>
 
 <!--
-PyMC-experimental is where new features are developed and tested:
+PyMC-Extras is where new features are developed and tested:
 
 New Statistical Methods:
-- Variational inference: faster approximate inference
-- Gaussian processes: flexible non-parametric models
-- State space models: time series with latent states
-- Causal inference: experimental designs and effect estimation
+- Pathfinder: mode-seeking approximate inference
+- Laplace approximation around posterior mode
+- Sequential Monte Carlo (SMC)
+- GP latent approximations
+- State space toolkit (filters, models)
 
 Experimental Features:
-- New MCMC samplers (beyond NUTS)
-- Advanced diagnostics and model checking
-- Information criteria and model comparison tools
-- Optimization algorithms for MAP estimation
+- Additional distributions and transforms
+- Model builder, priors, printing, and serialization helpers
+- Preprocessing and utility functions
+- Experimental inference APIs (fit utilities)
 
 How It Works:
-- Install: pip install pymc-experimental
+- Install: pip install pymc-extras
 - Import specific modules you need
 - Features are less stable than main PyMC
 - Extensive testing before moving to core PyMC
@@ -2554,8 +2547,6 @@ Caution:
 - APIs may change
 - Use main PyMC for production applications
 - Good for research and experimentation
-
-This is where the future of PyMC is being built!
 -->
 
 ---
@@ -2708,7 +2699,7 @@ layout: top-title
 ---
 
 
-:: title :: 
+:: title ::
 
 # Getting Help & Contributing
 
@@ -2809,200 +2800,61 @@ Understanding these trends will help you stay current and make good decisions ab
 layout: center
 ---
 
-# 🚀 Performance & Backends
+# 🧠 Inference Improvements
 
-<div class="grid grid-cols-2 gap-12 mt-8">
-  <div class="text-center">
-    <div class="text-5xl mb-4">⚡</div>
-    <div class="text-2xl">JAX Backend</div>
-    <div class="text-lg mt-2 text-gray-600">GPU acceleration & JIT compilation</div>
-  </div>
-  <div class="text-center">
-    <div class="text-5xl mb-4">🔧</div>
-    <div class="text-2xl">Alternative Samplers</div>
-    <div class="text-lg mt-2 text-gray-600">nutpie, BlackJAX integration</div>
-  </div>
+- Variational inference modernization for faster, more stable VI
+- Pathfinder: JAX compatibility and robust NUTS initialization
+- Normalizing flows for richer variational families
+- Nutpie adaptation as an initialization choice for native sampler
+- Zarr-backed sampling: resumable runs and compatibility across samplers
+- Superchains: cross-run diagnostics (with ArviZ support)
+
+<div class="mt-6 text-center text-lg text-gray-500">
+  Goal: make inference faster, more reliable, and easier to scale
 </div>
-
-<div class="mt-8 text-center text-lg text-gray-500">
-  Significant performance improvements for large-scale models
-</div>
-
-<!--
-PyMC is actively improving performance and expanding backend options:
-
-JAX Backend:
-- GPU and TPU acceleration for large models
-- JIT compilation for significant speedups
-- Already available and actively developed
-- Particularly beneficial for complex hierarchical models
-- Apple Silicon GPU support through JAX
-
-Alternative Samplers:
-- nutpie: Rust-based NUTS implementation with numba compilation
-- BlackJAX integration for advanced sampling algorithms
-- Fisher HMC for challenging geometries
-- Specialized samplers for different model types
-
-Current Status:
-- JAX backend is production-ready for many use cases
-- nutpie provides significant speedups for certain models
-- Active development on sampler ecosystem
-- Focus on making PyMC faster and more scalable
-
-Performance Improvements:
-- 5-10x speedups already achievable with JAX
-- Better scaling to larger datasets
-- More efficient memory usage
-- Improved convergence diagnostics
-
-These developments make PyMC competitive for industrial-scale applications while maintaining its ease of use.
--->
 
 ---
 layout: center
 ---
 
-# 🌟 Ecosystem Growth
+# 🧩 User Experience Priorities
 
-<div class="grid grid-cols-3 gap-6 mt-8">
-  <div class="text-center">
-    <div class="text-4xl mb-2">🔧</div>
-    <div class="text-xl mb-2">Domain Tools</div>
-    <div class="text-sm text-gray-600">PyMC-Marketing, CausalPy</div>
-  </div>
-  <div class="text-center">
-    <div class="text-4xl mb-2">🔌/div>
-    <div class="text-xl mb-2">Integrations</div>
-    <div class="text-sm text-gray-600">Bambi, scikit-learn</div>
-  </div>
-  <div class="text-center">
-    <div class="text-4xl mb-2">📚</div>
-    <div class="text-xl mb-2">Education</div>
-    <div class="text-sm text-gray-600">Books, tutorials, courses</div>
-  </div>
+- Smarter automation and defaults for newcomers
+- pip install improvements (uv) to make setup simple and reliable
+- Warm starts to resume or iterate sampling seamlessly
+
+<div class="mt-6 text-center text-lg text-gray-500">
+  Goal: reduce friction from install → first model → iteration
 </div>
 
-<div class="mt-8 text-center">
-  <div class="text-2xl">Growing community and specialized applications</div>
-</div>
-
-<!--
-The PyMC ecosystem is expanding rapidly with specialized tools and integrations:
-
-Domain-Specific Tools:
-- PyMC-Marketing: Marketing mix modeling, customer lifetime value
-- CausalPy: Causal inference in quasi-experimental settings
-- Exoplanet: Astronomical time series and transit modeling
-- BEAT: Bayesian earthquake analysis
-
-High-Level Interfaces:
-- Bambi: R-style formula interface for statistical modeling
-- PyMC-Learn: Scikit-learn compatible API
-- Calibr8: Detailed observation models for complex likelihoods
-
-Educational Resources:
-- Multiple books using PyMC (Bayesian Analysis with Python, etc.)
-- PyMCon conference and community events
-- Comprehensive documentation and example gallery
-- Active Discourse forum with expert support
-
-Integration Ecosystem:
-- ArviZ for visualization and diagnostics
-- PyTensor for computational backend
-- NumFOCUS fiscal sponsorship
-- Professional consulting through PyMC Labs
-
-Community Growth:
-- 9.2k GitHub stars and growing
-- Active contributor community (450+ contributors)
-- Industry adoption in finance, marketing, science
-- Strong academic and research usage
-
-This ecosystem growth makes PyMC not just a tool, but a complete platform for Bayesian modeling across domains.
--->
 
 ---
 layout: center
 ---
 
-# 🤝 How You Can Contribute
+# 🧱 Computational Backends
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="bg-blue-50 p-6 rounded">
-    <div class="text-blue-800 text-xl mb-4">👩‍💻 Technical</div>
-    <ul class="text-blue-700 text-sm space-y-2">
-      <li>🐛 Report bugs with examples</li>
-      <li>📚 Improve documentation</li>
-      <li>🧪 Test experimental features</li>
-      <li>💡 Contribute code improvements</li>
-    </ul>
-  </div>
-  <div class="bg-green-50 p-6 rounded">
-    <div class="text-green-800 text-xl mb-4">🌟 Community</div>
-    <ul class="text-green-700 text-sm space-y-2">
-      <li>❓ Answer questions on discourse</li>
-      <li>✍️ Write tutorials and blog posts</li>
-      <li>🎤 Give talks at meetups</li>
-      <li>👥 Organize local user groups</li>
-    </ul>
-  </div>
+- Choose a better default backend: easier to install and more performant
+- Automatic hardware detection to inform backend selection
+
+<div class="mt-6 text-center text-lg text-gray-500">
+  Goal: “just works” defaults across CPU/GPU/Apple Silicon
 </div>
 
-<div class="mt-8 text-center">
-  <div class="text-2xl text-orange-500">
-    🚀 Help us make PyMC even better!
-  </div>
+---
+layout: center
+---
+
+# 🫶 Community & Process
+
+- Permanent office hours and broader outreach (incl. academia)
+- Clearer funding pathways to sustain development
+- Predictable deprecations with required impact analysis + migration guides
+- Enhancement proposals (like NumPy/pandas NEPs) and regular roadmap reviews
+
+<div class="mt-6 text-center text-lg text-gray-500">
+  Goal: a healthy, transparent, and well‑supported community
 </div>
-
-<!--
-The PyMC community thrives on contributions from users like you:
-
-Technical Contributions:
-
-Bug Reports:
-- Include minimal reproducing examples
-- Help developers understand and fix issues
-- Make PyMC more reliable for everyone
-
-Documentation:
-- Fix typos and unclear explanations
-- Add examples for complex features
-- Improve tutorials for beginners
-- Translate content to other languages
-
-Testing:
-- Try new features before release
-- Report compatibility issues
-- Help with cross-platform testing
-
-Code:
-- Fix bugs in your area of expertise
-- Implement new features
-- Optimize performance
-- Add new distributions or samplers
-
-Community Contributions:
-
-Support:
-- Answer questions on discourse.pymc.io
-- Help newcomers get started
-- Share your expertise
-
-Content Creation:
-- Write blog posts about your analyses
-- Create video tutorials
-- Share case studies from your domain
-- Publish reproducible research
-
-Outreach:
-- Give talks at conferences and meetups
-- Organize workshops at your institution
-- Start local PyMC user groups
-- Advocate for Bayesian methods in your field
-
-Every contribution matters - the community values all forms of participation!
--->
 
 ---
 layout: credits
@@ -3028,8 +2880,12 @@ class: text-center
   </div>
 </div>
 
-<div class="text-2xl mt-8 mb-12">
+<div class="text-2xl mt-8 mb-8">
   Thank you for your interest in PyMC!
+</div>
+
+<div class="flex justify-center items-center mt-4">
+  <img src="/4-pymc-labs-transp-black.png" alt="PyMC Labs" class="h-16 opacity-80">
 </div>
 
 <!--
