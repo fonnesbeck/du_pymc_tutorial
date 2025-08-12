@@ -606,7 +606,7 @@ PyMC supports multiple computational backends and sampling libraries:
 4. BlackJAX (Advanced JAX samplers):
    - JAX-based sampling library
    - Install: conda install blackjax
-   - Advanced MCMC algorithms
+   - SMC, sgMCMC, NUTS, VI
    - Useful for research and specialized sampling
 
 For this tutorial, we'll use the default PyTensor backend since it works reliably for everyone and handles all our examples perfectly.
@@ -2352,7 +2352,13 @@ columns: is-6
 
 :: title ::
 
-# ArviZ: Your Visualization Partner
+# ArviZ: Diagnostics & Visualization
+
+<div class="text-center mb-6">
+  <a href="https://github.com/arviz-devs/arviz" target="_blank" class="text-blue-400 hover:text-blue-300 text-lg font-mono">
+    📦 github.com/arviz-devs/arviz
+  </a>
+</div>
 
 :: left ::
 
@@ -2423,14 +2429,19 @@ align: c
 
 # Bambi: High-Level Modeling
 
+<div class="text-center mb-6">
+  <a href="https://github.com/bambinos/bambi" target="_blank" class="text-blue-400 hover:text-blue-300 text-lg font-mono">
+    📦 github.com/bambinos/bambi
+  </a>
+</div>
+
 :: content ::
 
 ```python
 import bambi as bmb
-import pandas as pd
 
 # R-style formula interface
-model = bmb.Model('y ~ x1 + x2 + (1|group)', data=df)
+model = bmb.Model('y ~ x1 + x2 + (1|group)', data=my_data)
 
 # Automatic priors and sampling
 results = model.fit()
@@ -2488,6 +2499,12 @@ columns: is-6
 :: title ::
 
 # PyMC-Extras: Cutting Edge
+
+<div class="text-center mb-6">
+  <a href="https://github.com/pymc-devs/pymc-extras" target="_blank" class="text-blue-400 hover:text-blue-300 text-lg font-mono">
+    📦 github.com/pymc-devs/pymc-extras
+  </a>
+</div>
 
 :: left ::
 
@@ -2788,7 +2805,6 @@ Where PyMC is heading
 Let's look at where PyMC and Bayesian modeling are heading in the next few years.
 
 The field is evolving rapidly, with new developments in:
-- Integration with AI/ML workflows
 - Computational performance improvements
 - New statistical methods and applications
 - Easier interfaces for domain experts
@@ -2802,12 +2818,11 @@ layout: center
 
 # 🧠 Inference Improvements
 
-- Variational inference modernization for faster, more stable VI
-- Pathfinder: JAX compatibility and robust NUTS initialization
-- Normalizing flows for richer variational families
-- Nutpie adaptation as an initialization choice for native sampler
-- Zarr-backed sampling: resumable runs and compatibility across samplers
-- Superchains: cross-run diagnostics (with ArviZ support)
+- **Variational inference** modernization for faster, more stable VI
+- **Pathfinder**: JAX compatibility and robust NUTS initialization
+- **Normalizing flows** for richer variational families
+- **Zarr-backed sampling**: resumable runs and compatibility across samplers
+- **Superchains**: cross-run diagnostics (with ArviZ support)
 
 <div class="mt-6 text-center text-lg text-gray-500">
   Goal: make inference faster, more reliable, and easier to scale
@@ -2819,9 +2834,9 @@ layout: center
 
 # 🧩 User Experience Priorities
 
-- Smarter automation and defaults for newcomers
-- pip install improvements (uv) to make setup simple and reliable
-- Warm starts to resume or iterate sampling seamlessly
+- Smarter **automation** and defaults for newcomers
+- **pip install improvements** (uv) to make setup simple and reliable
+- **Warm starts** to resume or iterate sampling seamlessly
 
 <div class="mt-6 text-center text-lg text-gray-500">
   Goal: reduce friction from install → first model → iteration
@@ -2834,8 +2849,8 @@ layout: center
 
 # 🧱 Computational Backends
 
-- Choose a better default backend: easier to install and more performant
-- Automatic hardware detection to inform backend selection
+- Choose a **better default backend**: easier to install and more performant
+- **Automatic hardware detection** to inform backend selection
 
 <div class="mt-6 text-center text-lg text-gray-500">
   Goal: “just works” defaults across CPU/GPU/Apple Silicon
@@ -2847,10 +2862,9 @@ layout: center
 
 # 🫶 Community & Process
 
-- Permanent office hours and broader outreach (incl. academia)
-- Clearer funding pathways to sustain development
-- Predictable deprecations with required impact analysis + migration guides
-- Enhancement proposals (like NumPy/pandas NEPs) and regular roadmap reviews
+- Permanent **office hours** and broader outreach (incl. academia)
+- Clearer **funding pathways** to sustain development
+- **Enhancement proposals** (like NumPy/pandas NEPs) and regular roadmap reviews
 
 <div class="mt-6 text-center text-lg text-gray-500">
   Goal: a healthy, transparent, and well‑supported community
