@@ -719,10 +719,10 @@ The g++ compiler warning on Windows causes 10-100x performance degradation! Inst
     </div>
   </div>
   <div class="bg-green-50 p-6 rounded-lg">
-    <div class="text-green-700 font-bold mb-3 text-lg">🔍 Need Help?</div>
+    <div class="text-green-700 font-bold mb-3 text-lg">🚨 PyMC Versioning</div>
     <div class="text-base text-green-600">
-      discourse.pymc.io<br>
-      Friendly community support!
+      PyMC3 was renamed to PyMC at v4<br>
+      Most v3 code works with minor edits, but use latest docs
     </div>
   </div>
 </div>
@@ -1165,6 +1165,80 @@ model.py -> pure PyMC tensor operations
 This separation prevents most data handling errors.
 -->
 
+---
+layout: top-title-two-cols
+align: c-lt-lt
+columns: is-6
+---
+
+:: title ::
+
+# ArviZ: Diagnostics & Visualization
+
+<div class="text-center mb-6">
+  <a href="https://github.com/arviz-devs/arviz" target="_blank" class="text-blue-400 hover:text-blue-300 text-lg font-mono">
+    📦 github.com/arviz-devs/arviz
+  </a>
+</div>
+
+:: left ::
+
+<div class="space-y-4">
+  <div>
+    <img src="https://python.arviz.org/en/stable/_images/mpl_plot_forest.png" class="w-full mx-auto" style="max-height: 25vh; object-fit: contain;">
+  </div>
+  <div>
+    <img src="https://python.arviz.org/en/stable/_images/mpl_plot_parallel.png" class="w-full mx-auto" style="max-height: 25vh; object-fit: contain;">
+  </div>
+</div>
+
+:: right ::
+
+<div class="space-y-4">
+  <div>
+    <img src="https://python.arviz.org/en/stable/_images/mpl_plot_forest_ridge.png" class="w-full mx-auto" style="max-height: 25vh; object-fit: contain;">
+  </div>
+  <div>
+    <img src="https://python.arviz.org/en/stable/_images/mpl_plot_joint.png" class="w-full mx-auto" style="max-height: 25vh; object-fit: contain;">
+  </div>
+</div>
+
+<!--
+ArviZ is the standard tool for Bayesian visualization and diagnostics:
+
+Key Plot Types:
+
+Trace Plots:
+- Monitor MCMC convergence
+- Identify mixing problems
+- Essential for any Bayesian analysis
+
+Forest Plots:
+- Compare parameter estimates across models
+- Show credible intervals clearly
+- Great for hierarchical models with many parameters
+
+Posterior Plots:
+- Visualize parameter distributions
+- Show credible intervals and point estimates
+- Easy to interpret and share
+
+Model Checking:
+- Posterior predictive checks
+- LOO-CV for model comparison
+- Energy plots for NUTS diagnostics
+- Rank plots for convergence assessment
+
+Why ArviZ?
+- Publication-quality plots out of the box
+- Consistent API across different samplers (PyMC, Stan, etc.)
+- Extensive customization options
+- Integrates seamlessly with PyMC
+- Active development and great documentation
+
+The forest plot shown illustrates parameter estimates with uncertainty - much more informative than traditional point estimates + error bars.
+-->
+
 
 ---
 layout: top-title-two-cols
@@ -1175,30 +1249,29 @@ columns: is-6
 :: title ::
 
 # PyMC ❤️ ArviZ Integration
+<div class="text-center text-base text-gray-400 mt-1">Seamless Bayesian Workflow</div>
 
 :: left ::
 
 <div class="text-2xl mb-4">🎨 PyMC</div>
 <ul class="text-lg space-y-2">
-  <li>Model specification</li>
-  <li>MCMC sampling</li>
-  <li>Prior/posterior predictive</li>
-  <li>Model comparison</li>
+  <div class="flex flex-col items-center">
+    <div class="mt-2 text-sm text-gray-500">Model building + sampling</div>
+    <img src="/pymc_sampling.gif" class="w-full max-w-md rounded-lg shadow" style="max-height: 45vh; object-fit: contain;">
+  </div>
 </ul>
 
 :: right ::
 
 <div class="text-2xl mb-4">📊 ArviZ</div>
 <ul class="text-lg space-y-2">
-  <li>Visualization</li>
-  <li>Diagnostics</li>
-  <li>Model checking</li>
-  <li>Summary statistics</li>
+  <div class="flex flex-col items-center">
+    <div class="mt-2 text-sm text-gray-500">Visualization, diagnostics, model comparison</div>
+    <img src="https://python.arviz.org/en/stable/_images/mpl_plot_trace_vlines.png" class="w-full max-w-md rounded-lg shadow" style="max-height: 45vh; object-fit: contain;">
+    <img src="https://python.arviz.org/en/stable/_images/mpl_plot_ppc_cumulative.png" class="w-full max-w-md rounded-lg shadow" style="max-height: 45vh; object-fit: contain;">
+  </div>
 </ul>
 
-<div class="mt-6 text-center text-lg text-gray-600">
-  Seamless workflow: PyMC → InferenceData → ArviZ
-</div>
 
 <!--
 PyMC and ArviZ work together seamlessly:
@@ -1875,76 +1948,16 @@ align: c
   </div>
   <div class="text-center">
     <div class="text-3xl mb-2">⚠️</div>
-    <div class="text-xl mb-1">Zero Divergences</div>
+    <div class="text-xl mb-1">No/Few Divergences</div>
     <div class="text-sm text-gray-600">No numerical issues</div>
   </div>
   <div class="text-center">
     <div class="text-3xl mb-2">🔗</div>
     <div class="text-xl mb-1">Good Mixing</div>
-    <div class="text-sm text-gray-600">Fuzzy caterpillars in traces</div>
+    <div class="text-sm text-gray-600">"Fuzzy caterpillars" in chains</div>
   </div>
 </div>
 
----
-layout: top-title
-align: c
----
-
-:: title ::
-
-# MAP is (Mostly) History
-
-:: content ::
-
-- find_MAP is discouraged for NUTS initialization
-- Prefer pm.sample(init="adapt_diag" or "jitter+adapt_diag")
-- Use MAP only for diagnosis, sparingly
-
----
-layout: top-title
-align: c
----
-:: title ::
-
-# PyMC3 vs PyMC v4/v5
-
-:: content ::
-
-- PyMC3 was renamed to PyMC at v4; v5 is current
-- Most v3 code works with minor edits, but use latest docs
-
-- Prefer pm.sample(init="adapt_diag" or "jitter+adapt_diag")
-- Use MAP only for diagnosis, sparingly
-
-<!--
-Always check these four diagnostics before trusting your results:
-
-R-hat (Potential Scale Reduction Factor):
-- Compares within-chain vs between-chain variance
-- Should be < 1.01 for all parameters
-- > 1.01 means chains haven't converged to the same distribution
-- Much > 1.1 is a serious problem
-
-Effective Sample Size (ESS):
-- How many independent samples you effectively have
-- Accounts for autocorrelation in MCMC chains
-- Need ESS > 400 for basic inference, > 1000 is better
-- Low ESS means high autocorrelation (slow mixing)
-
-Divergences:
-- Numerical instabilities during sampling
-- Even a few divergences can bias results
-- Often indicate problems with model specification or geometry
-- Zero divergences is the goal
-
-Chain Mixing:
-- Visual inspection of trace plots
-- Should look like "fuzzy caterpillars" - random noise around a mean
-- All chains should explore the same space
-- Patterns, trends, or stuck chains indicate problems
-
-If any of these fail, don't interpret your results! Fix the underlying issue first.
--->
 
 ---
 layout: top-title
@@ -1959,7 +1972,7 @@ align: c
 
 <div class="bg-red-50 p-6 rounded-lg mt-4">
   <div class="text-red-800 text-xl mb-3">
-    "There were 47 divergences after tuning..."
+    "There were 547 divergences after tuning..."
   </div>
 
   <div class="text-red-700">
@@ -2153,18 +2166,18 @@ layout: top-title
   <div class="bg-red-50 p-6 rounded-lg">
     <div class="text-red-700 font-bold mb-3 text-lg">❌ Wrong Constraints</div>
     <div class="text-base text-red-600 font-mono">
-      # Allows negative values!
+      # Allows negative values!<br>
       sigma = pm.Normal('sigma', 0, 5)
     </div>
     <div class="text-base text-red-600 mt-3">
       → "Bad initial energy" errors<br>
-      → Impossible likelihoods
+      → Zero-valued likelihoods
     </div>
   </div>
   <div class="bg-green-50 p-6 rounded-lg">
     <div class="text-green-700 font-bold mb-3 text-lg">✅ Proper Constraints</div>
     <div class="text-base text-green-600 font-mono">
-      # Ensures positive values
+      # Ensures positive values<br>
       sigma = pm.HalfNormal('sigma', 5)
     </div>
     <div class="text-base text-green-600 mt-3">
@@ -2175,11 +2188,12 @@ layout: top-title
 </div>
 
 <div class="mt-6 bg-blue-50 p-6 rounded-lg">
-  <div class="text-blue-800 font-bold mb-3 text-lg">🎯 Golden Rules</div>
+  <div class="text-blue-800 font-bold mb-3 text-lg">🎯 Common Choices</div>
   <div class="text-base text-blue-700">
-    • <strong>Standard deviations:</strong> HalfNormal, not Normal<br>
-    • <strong>Probabilities:</strong> Beta(2,2), not Uniform(0,1)<br>
-    • <strong>Coefficients:</strong> Normal(0, 2.5) for standardized data<br>
+    • <strong>Standard deviations:</strong> HalfNormal, Half Cauchy<br>
+    • <strong>Probabilities:</strong> Beta, Uniform(0,1)<br>
+    • <strong>Rates:</strong> Gamma, Exponential<br>
+    • <strong>Coefficients:</strong> Normal(0, s) for standardized data<br>
     • <strong>Always</strong> do prior predictive checks!
   </div>
 </div>
@@ -2275,150 +2289,6 @@ Common Progression:
 Remember: a simple model that works is better than a complex model that doesn't. You can always add complexity later once you have a solid foundation.
 -->
 
----
-layout: top-title-two-cols
-align: c-lt-lt
-columns: is-6
----
-
-:: title ::
-
-# 🤔 Conceptual Clarifications
-
-:: left ::
-
-<div class="bg-yellow-50 p-4 rounded">
-  <div class="text-yellow-700 font-bold mb-2">🗺️ find_MAP() Deprecation</div>
-  <div class="text-sm text-yellow-600">
-    <strong>Old tutorials say:</strong> Start with MAP<br>
-    <strong>Modern practice:</strong> Just call pm.sample()<br>
-    <strong>Why?</strong> MAP isn't representative in high dimensions
-  </div>
-</div>
-
-<div class="bg-blue-50 p-4 rounded mt-4">
-  <div class="text-blue-700 font-bold mb-2">🔢 PyMC3 vs PyMC</div>
-  <div class="text-sm text-blue-600">
-    <strong>PyMC3:</strong> Old name (legacy)<br>
-    <strong>PyMC:</strong> Current name (v4+)<br>
-    <strong>Migration:</strong> Most code works with minor changes
-  </div>
-</div>
-
-:: right ::
-
-<div class="bg-green-50 p-4 rounded">
-  <div class="text-green-800 font-bold mb-2">📊 Prior vs Posterior Predictive</div>
-  <div class="text-sm text-green-700">
-    <strong>Prior predictive:</strong> Validate model assumptions <em>before</em> seeing data<br>
-    <strong>Posterior predictive:</strong> Compare model predictions <em>after</em> fitting<br>
-    <strong>Key:</strong> Use joint distributions, not marginals (parameters are correlated!)
-  </div>
-</div>
-
-<!--
-Conceptual confusions that persist even after technical issues are resolved:
-
-find_MAP() Deprecation Confusion:
-- Older tutorials and books recommend starting with MAP estimates
-- find_MAP() was deprecated because MAP estimates aren't representative in high dimensions
-- Modern practice: just call pm.sample() directly with good initialization strategies
-- NUTS is robust enough to find good starting points automatically
-- MAP can actually hinder NUTS sampling by starting in atypical regions
-
-Version Confusion (PyMC3 vs PyMC):
-- PyMC3 was renamed to PyMC starting with version 4
-- Current PyMC (v5+) is the actively developed version
-- Most PyMC3 code works with minor modifications
-- Don't panic if you see "PyMC3" in old tutorials - concepts translate directly
-- Check import statements: import pymc3 -> import pymc as pm
-
-Prior vs Posterior Predictive Confusion:
-- Prior predictive: sample from model before seeing data, validates assumptions
-- Posterior predictive: sample from fitted model, compares to observed data
-- Both require joint distributions because parameters are typically correlated
-- Common mistake: using marginal distributions instead of joint samples
-- Prior predictive catches model specification errors early
-- Posterior predictive validates model fit to actual data
-
-These conceptual issues cause anxiety but are easily resolved with modern workflows.
--->
-
----
-layout: top-title-two-cols
-align: c-lt-lt
-columns: is-6
----
-
-:: title ::
-
-# ArviZ: Diagnostics & Visualization
-
-<div class="text-center mb-6">
-  <a href="https://github.com/arviz-devs/arviz" target="_blank" class="text-blue-400 hover:text-blue-300 text-lg font-mono">
-    📦 github.com/arviz-devs/arviz
-  </a>
-</div>
-
-:: left ::
-
-<div class="grid grid-cols-1 gap-4 mt-4">
-  <div class="text-center">
-    <div class="text-4xl mb-1">📊</div>
-    <div class="text-xl mb-1">Trace Plots</div>
-    <div class="text-sm">Check convergence</div>
-  </div>
-  <div class="text-center">
-    <div class="text-4xl mb-1">🎨</div>
-    <div class="text-xl mb-1">Forest Plots</div>
-    <div class="text-sm">Compare parameters</div>
-  </div>
-  <div class="text-center">
-    <div class="text-4xl mb-1">🔍</div>
-    <div class="text-xl mb-1">Model Checking</div>
-    <div class="text-sm">Validate assumptions</div>
-  </div>
-</div>
-
-:: right ::
-
-<img src="/plots/bioassay/forest_plot.png" class="w-full max-w-xl mx-auto mt-2" style="max-height: 60vh; object-fit: contain;">
-
-<!--
-ArviZ is the standard tool for Bayesian visualization and diagnostics:
-
-Key Plot Types:
-
-Trace Plots:
-- Monitor MCMC convergence
-- Identify mixing problems
-- Essential for any Bayesian analysis
-
-Forest Plots:
-- Compare parameter estimates across models
-- Show credible intervals clearly
-- Great for hierarchical models with many parameters
-
-Posterior Plots:
-- Visualize parameter distributions
-- Show credible intervals and point estimates
-- Easy to interpret and share
-
-Model Checking:
-- Posterior predictive checks
-- LOO-CV for model comparison
-- Energy plots for NUTS diagnostics
-- Rank plots for convergence assessment
-
-Why ArviZ?
-- Publication-quality plots out of the box
-- Consistent API across different samplers (PyMC, Stan, etc.)
-- Extensive customization options
-- Integrates seamlessly with PyMC
-- Active development and great documentation
-
-The forest plot shown illustrates parameter estimates with uncertainty - much more informative than traditional point estimates + error bars.
--->
 
 ---
 layout: top-title
