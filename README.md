@@ -19,45 +19,60 @@ By the end of this tutorial, participants will:
 
 ### Tutorial Outline
 
-#### 1. Introduction to PyMC and Probabilistic Programming
-- What is PyMC and its role in the Python data science ecosystem
-- Understanding probabilistic vs Bayesian approaches
-- The probabilistic programming landscape
-- Real-world applications and case studies
+#### 1. Introduction to PyMC and Bayesian Modeling
+- What is PyMC? (Statistics + Probabilistic Thinking + Python)
+- Why Bayesian modeling vs traditional approaches
+- Real-world applications across industries
+- Understanding uncertainty quantification
 
 #### 2. Installation and Environment Setup
-- Recommended installation procedure
-- Understanding PyMC's computational backends
-- Troubleshooting common installation issues
-- Setting up development environments
+- Recommended installation with conda-forge
+- Fresh environment setup for beginners
+- Pixi for modern package management
+- Sampling backends and computational libraries
+- Testing your installation
+- Troubleshooting common issues and performance optimization
 
 #### 3. PyMC Fundamentals
-- Model contexts and random variables
-- Prior and likelihood specification
-- Working with observed data
-- Understanding PyMC's relationship with ArviZ
+- Bayes' theorem and the computational challenge
+- MCMC to the rescue (NUTS sampling)
+- The model container and context managers
+- Random variables and distributions
+- Observed data and likelihood specification
+- Data handling best practices and common pitfalls
+- PyMC ❤️ ArviZ integration
 
-#### 4. Building Your First Model
-- Hands-on example: Bayesian linear regression
+#### 4. Building Your First Model: Bioassay Example
+- The bioassay problem: dose-response modeling
+- Building the logistic regression model
+- Common modeling errors to avoid
 - Prior predictive checks
-- Posterior sampling with NUTS
-- Basic model diagnostics
+- Sampling the posterior with MCMC
+- Trace plots and convergence checking
+- Posterior distributions and parameter relationships
+- Model summary and diagnostics
 - Posterior predictive checks
+- Making predictions for new data
 
 #### 5. Common Pitfalls and Solutions
-- Addressing frequently asked questions
-- Debugging convergence issues
+- Convergence diagnostics (R-hat, ESS, divergences)
 - Understanding and fixing divergences
-- Performance optimization tips
+- Diagnosing sampling problems ("Bad initial energy")
+- Performance optimization strategies
+- Prior specification problems and debugging workflow
+- Conceptual clarifications (MAP deprecation, PyMC3 vs PyMC)
 
 #### 6. The PyMC Ecosystem and Resources
 - ArviZ for visualization and diagnostics
-- Related packages (Bambi, PyMC-experimental)
+- Bambi for high-level modeling
+- PyMC-Extras for cutting-edge methods
 - Finding and using PyMC example notebooks
-- Community resources and support channels
+- Community resources and getting help
+- Contributing to the project
 
 #### 7. Future Directions
-- How AI/LLMs are changing PyMC workflows
-- PyMC's development roadmap
-- Opportunities for contribution
+- Inference improvements (variational inference, Pathfinder, normalizing flows)
+- User experience priorities (automation, installation, warm starts)
+- Computational backends and hardware detection
+- Community and development process improvements
 
