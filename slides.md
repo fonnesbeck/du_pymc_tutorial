@@ -12,7 +12,6 @@ class: text-center
 highlighter: shiki
 drawings:
   persist: false
-transition: slide-left
 mdc: true
 fonts:
   sans: Roboto
@@ -36,7 +35,8 @@ by **Christopher Fonnesbeck** • *PyMC Labs*
 
 :: note ::
 
-\* Data Umbrella Tutorial
+\* Data Umbrella Tutorial · DOI: 10.5281/zenodo.16875480
+
 
 <!--
 Today we'll cover:
@@ -695,29 +695,30 @@ The g++ compiler warning on Windows causes 10-100x performance degradation! Inst
 </Admonition>
 
 <div class="grid grid-cols-2 gap-8 mt-6">
+  <div class="bg-slate-50 p-6 rounded-lg">
+    <div class="text-slate-800 font-bold mb-3 text-lg">⚙️ Install & Setup</div>
+    <div class="text-base text-slate-700">
+      Fresh conda-forge env (no pip mixing)<br>
+      Windows: m2w64 • Apple: conda-forge only
+    </div>
+  </div>
+
+  <div class="bg-purple-50 p-6 rounded-lg">
+    <div class="text-purple-800 font-bold mb-3 text-lg">📐 Shapes & Dims</div>
+    <div class="text-base text-purple-700">
+      Use <code>dot</code> for linear models<br>
+      Keep dims/coords consistent
+    </div>
+  </div>
+
   <div class="bg-red-50 p-6 rounded-lg">
-    <div class="text-red-700 font-bold mb-3 text-lg">💥 Import Errors</div>
-    <div class="text-base text-red-600">
-      pip install --upgrade pymc arviz<br>
-      conda update -c conda-forge pymc
+    <div class="text-red-800 font-bold mb-3 text-lg">🧪 Bad initial energy</div>
+    <div class="text-base text-red-700">
+      Check test point; constrain priors<br>
+      Try adaptive init (<code>adapt_diag</code>)
     </div>
   </div>
-  <div class="bg-yellow-50 p-6 rounded-lg">
-    <div class="text-yellow-700 font-bold mb-3 text-lg">⚠️ g++ Compiler Warning</div>
-    <div class="text-base text-yellow-600">
-      <strong>Windows users:</strong><br>
-      conda install m2w64-toolchain<br>
-      Fixes severe performance degradation
-    </div>
-  </div>
-  <div class="bg-blue-50 p-6 rounded-lg">
-    <div class="text-blue-700 font-bold mb-3 text-lg">🖥️ Platform-Specific</div>
-    <div class="text-base text-blue-600">
-      <strong>Mac M1/M2:</strong> Use conda-forge only<br>
-      <strong>Linux:</strong> Generally smooth<br>
-      <strong>Colab:</strong> May need runtime restart
-    </div>
-  </div>
+
   <div class="bg-green-50 p-6 rounded-lg">
     <div class="text-green-700 font-bold mb-3 text-lg">🚨 PyMC Versioning</div>
     <div class="text-base text-green-600">
@@ -1117,7 +1118,7 @@ columns: is-6
 - 🔁 Updatable data
   - Use `pm.Data()` objects for data that will change
 - 🧩 Missing data
-  - Prefer tensor operations like `pt.where()` over boolean masks
+  - Prefer tensor operations like `pm.math.where()` over boolean masks
 
 :: right ::
 
@@ -1406,17 +1407,18 @@ n_deaths = np.array([0, 1, 3, 5])
 
 with pm.Model() as bioassay_model:
     # Updatable input
-    dose = pm.Data('dose', dose)
+    dose_data = pm.Data('dose_data', dose)
+    deaths_data = pm.Data('deaths_data', deaths)
 
     # Priors for intercept and slope
     alpha = pm.Normal('alpha', mu=0, sigma=2.5)
     beta = pm.Normal('beta', mu=0, sigma=2.5)
 
     # Logistic regression model
-    theta = pm.invlogit(alpha + beta * dose)
+    theta = pm.math.invlogit(alpha + beta * dose_data)
 
     # Binomial likelihood
-    deaths = pm.Binomial('deaths', n=n_animals, p=theta, observed=n_deaths)
+    deaths = pm.Binomial('deaths', n=n_animals, p=theta, observed=deaths_data)
 ```
 
 <!--
@@ -1448,6 +1450,43 @@ The Model Structure:
    - Like flipping n_animals coins, each with probability theta of "death"
 
 This is a generalized linear model (GLM) with logit link - a Bayesian version of logistic regression.
+-->
+
+---
+layout: top-title
+align: c
+---
+
+:: title ::
+
+# Model dims & coords
+
+:: content ::
+
+Optionally specify <code>coords</code> and bind variables with <code>dims</code> to make variables indexable by name.
+
+```python
+coords = {
+      "coefs": ["intercept", "slope"],
+      "obs": list(np.arange(4))
+    }
+with pm.Model(coords=coords) as dose_model:
+
+    dose_data = pm.Data('dose_data', dose)
+    deaths_data = pm.Data('deaths_data', deaths)
+
+    # Vector of coefficients, indexed by labelled dimensions
+    beta = pm.Normal('beta0', 0, sigma=2.5, dims="coefs")
+
+    p = pm.math.invlogit(beta[0] + beta[1] * dose_data)
+
+    y = pm.Binomial('y', n=n, p=p, observed=deaths_data, dims="obs")
+```
+
+<!--
+- Label model dimensions with coords to index arrays by name (not position)
+- dims ties each variable to those labels so shapes are explicit and readable
+- Coords propagate to InferenceData for clearer ArviZ plots and summaries
 -->
 
 ---
